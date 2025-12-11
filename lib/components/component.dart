@@ -172,3 +172,19 @@ class GameTile extends StatelessWidget {
     );
   }
 }
+
+class PageTest extends StatelessWidget {
+  final Color color;
+  final String data;
+  const PageTest({super.key, required this.color, required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: color,
+      width: 400,
+      height: 400,
+      child: Center(child: Text(data)),
+    );
+  }
+}
