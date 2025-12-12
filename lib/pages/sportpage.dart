@@ -14,6 +14,14 @@ class SportPage extends StatefulWidget {
 
 class _SportPageState extends State<SportPage> {
   bool _isExpanded = false;
+  int number_of_dates = 8;
+  late final ScrollController dateListScroll;
+
+  @override
+  void initState() {
+    dateListScroll = ScrollController(initialScrollOffset: number_of_dates / 2);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -182,35 +190,71 @@ class _SportPageState extends State<SportPage> {
           SliverPersistentHeader(
             pinned: true,
             delegate: _datePicker(
-              maxHeight: 100,
-              minHeight: 100,
+              maxHeight: 90,
+              minHeight: 90,
               child: Container(
-                height: 100,
-                color: Colors.orange[100],
+                height: 90,
+                color: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.local_shipping,
-                      size: 16,
-                      color: Colors.orange[900],
+                    IconButton.filled(
+                      onPressed: () {},
+                      icon: Icon(Icons.mail),
+                      iconSize: 16,
+                      color: Colors.white,
+                      style: IconButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        elevation: 3,
+                      ),
                     ),
                     SizedBox(width: 8),
-                    Text(
-                      '🎉 Timer code here!',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.orange[900],
+                    Expanded(
+                      child: ListView.builder(
+                        controller: dateListScroll,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: number_of_dates,
+                        itemBuilder: (context, index) => Padding(
+                          padding: const EdgeInsets.symmetric(
+                            // horizontal: 3,
+                            vertical: 15,
+                          ),
+                          child: DateTile(),
+                        ),
                       ),
+                    ),
+                    SizedBox(width: 8),
+                    IconButton.filled(
+                      onPressed: () {},
+                      icon: Icon(Icons.calendar_month_rounded),
+                      style: IconButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        elevation: 10,
+                      ),
+                      iconSize: 16,
+                      color: Colors.white,
                     ),
                   ],
                 ),
               ),
             ),
           ),
-          
+          SliverList.builder(
+            itemCount: 18,
+            itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2),
+              child: GameTile(
+                icondata: Icons.person,
+                isLive: true,
+                isFavorite: true,
+                awayScores: '2',
+                homeTeam: 'Villareal',
+                awayTeam: 'Fc Barcelona',
+              ),
+            ),
+          ),
         ],
       ),
     );
