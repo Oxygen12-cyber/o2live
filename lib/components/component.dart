@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -75,99 +77,120 @@ class GameTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      tileColor: Color(0xff1a1a1a),
-      onTap: onTap,
-      contentPadding: EdgeInsets.only(left: 0, right: 12, top: 12, bottom: 12),
-      titleAlignment: ListTileTitleAlignment.center,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(24),
-        side: BorderSide.none,
+    return Container(
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(18),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(spreadRadius: .05, blurRadius: 15, color: Colors.black12),
+        ],
       ),
-      leading: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            width: 10,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: isLive ? Colors.red.withAlpha(200) : Colors.transparent,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.red,
-                  spreadRadius: 10,
-                  blurRadius: 30,
-                  offset: Offset(10, 0),
+      child: ListTile(
+        onTap: onTap,
+        contentPadding: EdgeInsets.only(
+          left: 0,
+          right: 12,
+          top: 12,
+          bottom: 12,
+        ),
+        titleAlignment: ListTileTitleAlignment.center,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: BorderSide.none,
+        ),
+        leading: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            isLive
+                ? Container(
+                    width: 6,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      color: isLive
+                          ? Colors.red.withAlpha(200)
+                          : Colors.transparent,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.red.withAlpha(80),
+                          spreadRadius: 10,
+                          blurRadius: 30,
+                          offset: Offset(10, 0),
+                        ),
+                      ],
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(0),
+                        topRight: Radius.circular(8),
+                        bottomLeft: Radius.circular(0),
+                        bottomRight: Radius.circular(8),
+                      ),
+                    ),
+                  )
+                : SizedBox(width: 6),
+            SizedBox(width: context.wp(3)),
+            Text(
+              gametime ?? 'null',
+              style: TextStyle(
+                color: Colors.black54,
+                fontSize: 13,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        title: Column(
+          spacing: 10,
+          children: [
+            Row(
+              spacing: 10,
+              children: [
+                Icon(icondata, size: 24),
+                Text(homeTeam, style: TextStyle(color: Colors.black)),
+              ],
+            ),
+            Row(
+              spacing: 10,
+              children: [
+                Icon(icondata, size: 24),
+                Text(awayTeam, style: TextStyle(color: Colors.black)),
+              ],
+            ),
+          ],
+        ),
+        trailing: Row(
+          spacing: 10,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  homeScores ?? '0',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  awayScores ?? '0',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(8),
-                topRight: Radius.circular(8),
-                bottomLeft: Radius.circular(8),
-                bottomRight: Radius.circular(8),
-              ),
             ),
-          ),
-          SizedBox(width: context.wp(3)),
-          Text(
-            gametime ?? 'FT',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
+            Icon(
+              isFavorite ? Icons.star : Icons.star_border_outlined,
+              color: isFavorite ? Colors.amber : Colors.black45,
             ),
-          ),
-        ],
-      ),
-      title: Column(
-        spacing: 10,
-        children: [
-          Row(
-            spacing: 10,
-            children: [
-              Icon(icondata, size: 24),
-              Text(homeTeam, style: TextStyle(color: Colors.white)),
-            ],
-          ),
-          Row(
-            spacing: 10,
-            children: [
-              Icon(icondata, size: 24),
-              Text(awayTeam, style: TextStyle(color: Colors.white)),
-            ],
-          ),
-        ],
-      ),
-      trailing: Row(
-        spacing: 10,
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                homeScores ?? '0',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                awayScores ?? '0',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-          Icon(Icons.star, color: isFavorite ? Colors.amber : Colors.black),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -185,6 +208,46 @@ class PageTest extends StatelessWidget {
       width: 400,
       height: 400,
       child: Center(child: Text(data)),
+    );
+  }
+}
+
+class DateTile extends StatelessWidget {
+  final int selectedIndex;
+  final int index;
+  final Function()? onTap;
+  const DateTile({
+    super.key,
+    required this.selectedIndex,
+    required this.index,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 40,
+        height: 40,
+        padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: index == selectedIndex ? Colors.grey : Colors.white,
+          borderRadius: index == selectedIndex
+              ? BorderRadius.circular(12)
+              : BorderRadius.circular(0),
+        ),
+        child: const Text(
+          "Fri 13 \n May",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.black54,
+            fontSize: 10,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }

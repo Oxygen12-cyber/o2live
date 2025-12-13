@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:o2live/pages/getstarted.dart';
 import 'package:o2live/pages/homepage.dart';
 import 'package:o2live/pages/loginpage.dart';
@@ -21,7 +22,10 @@ Future<void> main() async {
   await Supabase.initialize(url: URL!, anonKey: KEY!);
 
   // runApp(MyApp());
-  runApp(DevicePreview(builder: (context) => const MyApp()));
+  // ignore: missing_provider_scope
+  runApp(
+    DevicePreview(builder: (context) => ProviderScope(child: const MyApp())),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -37,10 +41,10 @@ class MyApp extends StatelessWidget {
       // home: const LoginPage(),
       initialRoute: "/getStarted",
       routes: {
-        "/homePage": (context) => HomePage(),
-        "/getStarted": (context) => GetStarted(),
-        "/loginPage": (context) => LoginPage(),
-        "/signUP": (context) => SignUp(),
+        "/homePage": (context) =>const HomePage(),
+        "/getStarted": (context) => const GetStarted(),
+        "/loginPage": (context) => const LoginPage(),
+        "/signUP": (context) => const SignUp(),
       },
     );
   }
