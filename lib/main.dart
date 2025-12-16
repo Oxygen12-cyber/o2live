@@ -15,12 +15,12 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
-  await dotenv.load(fileName: '.env');
+  // await dotenv.load(fileName: '.env');
 
-  final URL = dotenv.env['SUPABASE_URL'];
-  final KEY = dotenv.env['SUPABASE_KEY'];
+  // final URL = dotenv.env['SUPABASE_URL'];
+  // final KEY = dotenv.env['SUPABASE_KEY'];
 
-  await Supabase.initialize(url: URL!, anonKey: KEY!);
+  // await Supabase.initialize(url: URL!, anonKey: KEY!);
 
   // runApp(MyApp());
   // ignore: missing_provider_scope

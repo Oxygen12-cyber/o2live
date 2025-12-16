@@ -11,9 +11,9 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
-.env
-.env.local
-.env.production
+# .env
+# .env.local
+# .env.production
 
 # IntelliJ related
 *.iml
