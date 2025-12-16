@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:o2live/pages/getstarted.dart';
 import 'package:o2live/pages/homepage.dart';
 import 'package:o2live/pages/loginpage.dart';
+import 'package:o2live/pages/searchpage.dart';
 import 'package:o2live/pages/signup.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:o2live/theme/theme.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         "/getStarted": (context) => const GetStarted(),
         "/loginPage": (context) => const LoginPage(),
         "/signUP": (context) => const SignUp(),
+        "/searchPage": (context) => const SearchPage(),
       },
     );
   }

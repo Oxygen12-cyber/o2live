@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:o2live/components/component.dart';
 
 class FavoritePage extends StatefulWidget {
@@ -10,7 +9,6 @@ class FavoritePage extends StatefulWidget {
 }
 
 class _FavoritePageState extends State<FavoritePage> {
-  bool _isExpanded = false;
 
   @override
   Widget build(BuildContext context) {

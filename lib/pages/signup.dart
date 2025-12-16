@@ -1,3 +1,4 @@
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 // import 'package:chewie/chewie.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -5,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 // import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:lottie/lottie.dart';
 import 'package:o2live/extensions/extension.dart';
+import 'package:video_player/video_player.dart';
 // import 'package:video_player/video_player.dart';
 
 class SignUp extends StatefulWidget {
@@ -15,8 +17,8 @@ class SignUp extends StatefulWidget {
 }
 
 class _LoginPageState extends State<SignUp> {
-  // final VideoPlayerController videoPlayerCtrl = VideoPlayerController.asset(
-  //   'assets/videos/mbappe.mp4',
+  // final VideoPlayerController videocontroller = VideoPlayerController.networkUrl(
+  //   Uri.parse('assets/videos/mbappe.mp4')
   // );
 
   // ChewieController? chewieController;
@@ -24,23 +26,21 @@ class _LoginPageState extends State<SignUp> {
   // @override
   // void initState() {
   //   chewieController = ChewieController(
-  //     aspectRatio: 9 / 20,
   //     autoPlay: true,
   //     draggableProgressBar: false,
-  //     fullScreenByDefault: true,
+  //     // fullScreenByDefault: true,
   //     showControls: false,
   //     autoInitialize: true,
   //     looping: true,
   //     // overlay: Container(color: Colors.black54, width: 300, height: 400,),
-  //     videoPlayerController: videoPlayerCtrl,
+  //     videoPlayerController: videocontroller,
   //   );
-
   //   super.initState();
   // }
 
   // @override
   // void dispose() {
-  //   videoPlayerCtrl.dispose();
+  //   videocontroller.dispose();
   //   chewieController!.dispose();
 
   //   super.dispose();
@@ -52,7 +52,7 @@ class _LoginPageState extends State<SignUp> {
       appBar: AppBar(),
       body: Stack(
         children: [
-          // Chewie(controller: chewieController!),
+          // Positioned.fill(child: Chewie(controller: chewieController!)),
           Positioned.fill(
             child: Container(
               decoration: BoxDecoration(
@@ -103,7 +103,7 @@ class _LoginPageState extends State<SignUp> {
                       onPressed: () {},
 
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 30,
                           vertical: 25,
                         ),
@@ -112,7 +112,7 @@ class _LoginPageState extends State<SignUp> {
                         ),
                         backgroundColor: const Color(0xff7d34eb),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Sign up with email',
                           style: TextStyle(color: Colors.white, fontSize: 19),

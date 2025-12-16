@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:o2live/components/component.dart';
@@ -16,14 +15,16 @@ class SportPage extends StatefulWidget {
 }
 
 class _SportPageState extends State<SportPage> {
-  bool _isExpanded = false;
   double offsetNumber = 0;
   int number_of_dates = 8;
   late final ScrollController dateListScroll;
 
   @override
   void initState() {
-    dateListScroll = ScrollController(initialScrollOffset: number_of_dates / 2, keepScrollOffset: true);
+    dateListScroll = ScrollController(
+      initialScrollOffset: number_of_dates / 2,
+      keepScrollOffset: true,
+    );
     super.initState();
   }
 
@@ -40,7 +41,7 @@ class _SportPageState extends State<SportPage> {
             SliverAppBar(
               floating: true,
               pinned: false,
-              expandedHeight: 100,
+              expandedHeight: 115,
               automaticallyImplyLeading: false,
               centerTitle: true,
               elevation: 0,
@@ -110,84 +111,40 @@ class _SportPageState extends State<SportPage> {
                 ],
               ),
               flexibleSpace: FlexibleSpaceBar(
-                // centerTitle: true,
-                // title: Text('Nothing'),
                 background: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    SizedBox(height: context.hp(8)),
+                    SizedBox(height: context.hp(10)),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Row(
-                        spacing: 20,
+                        spacing: 10,
                         mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          //icon button
-                          Container(
-                            height: 40,
-                            width: 40,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(32),
-                            ),
-                            child: Center(
-                              child: IconButton(
-                                iconSize: 20,
-                                icon: !_isExpanded
-                                    ? FaIcon(
-                                        FontAwesomeIcons.search,
-                                        color: Colors.blue,
-                                      )
-                                    : FaIcon(
-                                        FontAwesomeIcons.x,
-                                        color: Colors.blue,
-                                      ),
-                                onPressed: () {
-                                  setState(() {
-                                    _isExpanded = !_isExpanded;
-                                  });
-                                },
-                              ),
+                          IconButton.filled(
+                            onPressed: () =>
+                                Navigator.pushNamed(context, '/searchPage'),
+                            icon: Icon(Icons.search, color: Colors.black45),
+                            iconSize: 28,
+
+                            style: IconButton.styleFrom(
+                              backgroundColor: Colors.white,
                             ),
                           ),
+                          IconButton.filled(
+                            onPressed: () =>
+                                Navigator.pushNamed(context, '/searchPage'),
+                            icon: Icon(Icons.add, color: Colors.black45),
+                            iconSize: 28,
 
-                          //searchbar
-                          Container(
-                            width: _isExpanded ? 250 : 0,
-                            height: 40,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black,
-                                  spreadRadius: 0.1,
-                                  blurRadius: 0.5,
-                                ),
-                              ],
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
+                            style: IconButton.styleFrom(
+                              backgroundColor: Colors.white,
                             ),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintText: 'search anything',
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                            ),
+                          ),
+                          SizedBox(
+                            height: 30,
+                            width: 0,
+                            child: VerticalDivider(color: Colors.white54),
                           ),
                         ],
                       ),
@@ -204,7 +161,7 @@ class _SportPageState extends State<SportPage> {
                 minHeight: 90,
                 child: Container(
                   height: 90,
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
@@ -265,7 +222,9 @@ class _SportPageState extends State<SportPage> {
                       ),
                       SizedBox(width: 8),
                       IconButton.filled(
-                        onPressed: () {},
+                        onPressed: () {
+                          showPicker();
+                        },
                         icon: Icon(Icons.calendar_month_rounded),
                         style: IconButton.styleFrom(
                           backgroundColor: Colors.blue,
@@ -284,7 +243,7 @@ class _SportPageState extends State<SportPage> {
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 8.0,
-                  vertical: 2,
+                  vertical: 5,
                 ),
                 child: GameTile(
                   icondata: Icons.person,
@@ -301,6 +260,15 @@ class _SportPageState extends State<SportPage> {
           ],
         ),
       ),
+    );
+  }
+
+  Future showPicker() async {
+    return showDatePicker(
+      context: context,
+      currentDate: DateTime.now(),
+      firstDate: DateTime(2025, 12, 1),
+      lastDate: DateTime(2025, 12, 31),
     );
   }
 }

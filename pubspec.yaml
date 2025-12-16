@@ -46,6 +46,8 @@ dependencies:
   lottie: ^3.3.2
   flutter_dotenv:
   intl: ^0.20.2
+  table_calendar: ^3.2.0
+  flutter_vlc_player: ^7.4.4
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +78,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/videos/
+    - assets/videos/mbappe.mp4
     - assets/animes/
     - .env
 
