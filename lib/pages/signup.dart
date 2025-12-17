@@ -1,12 +1,11 @@
-import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 // import 'package:chewie/chewie.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 // import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:lottie/lottie.dart';
 import 'package:o2live/extensions/extension.dart';
-import 'package:video_player/video_player.dart';
 // import 'package:video_player/video_player.dart';
 
 class SignUp extends StatefulWidget {
@@ -17,47 +16,43 @@ class SignUp extends StatefulWidget {
 }
 
 class _LoginPageState extends State<SignUp> {
-  // final VideoPlayerController videocontroller = VideoPlayerController.networkUrl(
-  //   Uri.parse('assets/videos/mbappe.mp4')
-  // );
-
-  // ChewieController? chewieController;
-
-  // @override
-  // void initState() {
-  //   chewieController = ChewieController(
-  //     autoPlay: true,
-  //     draggableProgressBar: false,
-  //     // fullScreenByDefault: true,
-  //     showControls: false,
-  //     autoInitialize: true,
-  //     looping: true,
-  //     // overlay: Container(color: Colors.black54, width: 300, height: 400,),
-  //     videoPlayerController: videocontroller,
-  //   );
-  //   super.initState();
-  // }
-
-  // @override
-  // void dispose() {
-  //   videocontroller.dispose();
-  //   chewieController!.dispose();
-
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(),
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.green,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Iconsax.arrow_left_2_copy,
+            size: 28,
+            color: Colors.black,
+          ),
+        ),
+      ),
       body: Stack(
         children: [
-          // Positioned.fill(child: Chewie(controller: chewieController!)),
+          Positioned.fill(
+            child: Image.asset(
+              'assets/videos/mbappe2.webp',
+
+              height: size.height,
+              width: size.width,
+
+              alignment: Alignment.topCenter,
+            ),
+          ),
           Positioned.fill(
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.white.withAlpha(120), Colors.white],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.white.withAlpha(120), Colors.green.shade100],
                 ),
               ),
             ),

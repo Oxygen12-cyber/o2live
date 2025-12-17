@@ -8,8 +8,6 @@ import 'package:o2live/pages/searchpage.dart';
 import 'package:o2live/pages/signup.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:o2live/theme/theme.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +23,7 @@ Future<void> main() async {
   // runApp(MyApp());
   // ignore: missing_provider_scope
   runApp(
-    DevicePreview(builder: (context) => ProviderScope(child: const MyApp())),
+    DevicePreview(builder: (context) => const ProviderScope(child:  MyApp())),
   );
 }
 
@@ -42,7 +40,7 @@ class MyApp extends StatelessWidget {
       // home: const LoginPage(),
       initialRoute: "/getStarted",
       routes: {
-        "/homePage": (context) =>const HomePage(),
+        "/homePage": (context) => const HomePage(),
         "/getStarted": (context) => const GetStarted(),
         "/loginPage": (context) => const LoginPage(),
         "/signUP": (context) => const SignUp(),

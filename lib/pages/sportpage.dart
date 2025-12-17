@@ -31,233 +31,250 @@ class _SportPageState extends State<SportPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: RefreshIndicator(
+        backgroundColor: Colors.white,
+        color: Colors.blue,
+        displacement: 80,
+        strokeWidth: 2,
+        elevation: 4,
         onRefresh: () {
           debugPrint('refreshed');
-          return Future.delayed(Duration(seconds: 1));
+          return Future.delayed(const Duration(seconds: 1));
         },
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              floating: true,
-              pinned: false,
-              expandedHeight: 115,
-              automaticallyImplyLeading: false,
-              centerTitle: true,
-              elevation: 0,
-              scrolledUnderElevation: 0,
-              surfaceTintColor: Colors.transparent,
-              backgroundColor: Color(0xff3a33ff),
-              title: Row(
-                spacing: 0,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Scores',
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+        child: ScrollConfiguration(
+          behavior: ScrollConfiguration.of(
+            context,
+          ).copyWith(scrollbars: false, physics: const BouncingScrollPhysics()),
+          child: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                floating: true,
+                pinned: false,
+                expandedHeight: 115,
+                automaticallyImplyLeading: false,
+                centerTitle: true,
+                elevation: 0,
+                scrolledUnderElevation: 0,
+                surfaceTintColor: Colors.transparent,
+                backgroundColor: const Color(0xff3a33ff),
+                title: Row(
+                  spacing: 0,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Scores',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                    width: 0,
-                    child: VerticalDivider(color: Colors.white54),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      spacing: 5,
-                      children: [
-                        Text(
-                          'Super Chart',
-                          style: GoogleFonts.poppins(
-                            color: Colors.white70,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Icon(Iconsax.export_1, color: Colors.white),
-                      ],
+                    const SizedBox(
+                      height: 20,
+                      width: 0,
+                      child: VerticalDivider(color: Colors.white54),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                    width: 0,
-                    child: VerticalDivider(color: Colors.white54),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      spacing: 5,
-                      children: [
-                        Text(
-                          'Casino',
-                          style: GoogleFonts.poppins(
-                            color: Colors.white70,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Icon(Iconsax.export_1, color: Colors.white),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              flexibleSpace: FlexibleSpaceBar(
-                background: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SizedBox(height: context.hp(10)),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    TextButton(
+                      onPressed: () {},
                       child: Row(
-                        spacing: 10,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        spacing: 5,
                         children: [
-                          IconButton.filled(
-                            onPressed: () =>
-                                Navigator.pushNamed(context, '/searchPage'),
-                            icon: Icon(Icons.search, color: Colors.black45),
-                            iconSize: 28,
-
-                            style: IconButton.styleFrom(
-                              backgroundColor: Colors.white,
+                          Text(
+                            'Super Chart',
+                            style: GoogleFonts.poppins(
+                              color: Colors.white70,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                          IconButton.filled(
-                            onPressed: () =>
-                                Navigator.pushNamed(context, '/searchPage'),
-                            icon: Icon(Icons.add, color: Colors.black45),
-                            iconSize: 28,
-
-                            style: IconButton.styleFrom(
-                              backgroundColor: Colors.white,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                            width: 0,
-                            child: VerticalDivider(color: Colors.white54),
-                          ),
+                          const Icon(Iconsax.export_1, color: Colors.white),
                         ],
                       ),
                     ),
-                    SizedBox(height: context.hp(1)),
+                    const SizedBox(
+                      height: 20,
+                      width: 0,
+                      child: VerticalDivider(color: Colors.white54),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Row(
+                        spacing: 5,
+                        children: [
+                          Text(
+                            'Casino',
+                            style: GoogleFonts.poppins(
+                              color: Colors.white70,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Icon(Iconsax.export_1, color: Colors.white),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-              ),
-            ),
-            SliverPersistentHeader(
-              pinned: true,
-              delegate: _datePicker(
-                maxHeight: 90,
-                minHeight: 90,
-                child: Container(
-                  height: 90,
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        spreadRadius: .05,
-                        blurRadius: 2,
-                        color: Colors.black12,
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      IconButton.filled(
-                        onPressed: () {},
-                        icon: Icon(Icons.mail),
-                        iconSize: 16,
-                        color: Colors.white,
-                        style: IconButton.styleFrom(
-                          backgroundColor: Colors.blue,
-                          elevation: 3,
-                        ),
-                      ),
-                      SizedBox(width: 8),
-                      Consumer(
-                        builder: (context, ref, child) {
-                          final selectedIndex = ref.watch(
-                            generalStatesProvider,
-                          );
+                      SizedBox(height: context.hp(10)),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Row(
+                          spacing: 10,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            IconButton.filled(
+                              onPressed: () =>
+                                  Navigator.pushNamed(context, '/searchPage'),
+                              icon: const Icon(
+                                Icons.search,
+                                color: Colors.black45,
+                              ),
+                              iconSize: 28,
 
-                          return Expanded(
-                            child: ListView.builder(
-                              controller: dateListScroll,
-                              scrollDirection: Axis.horizontal,
-                              itemCount: 8,
-                              itemBuilder: (context, index) => Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  // horizontal: 3,
-                                  vertical: 15,
-                                ),
-                                child: DateTile(
-                                  selectedIndex: selectedIndex.selectedIndex,
-                                  index: index,
-                                  onTap: () {
-                                    setState(() {
-                                      offsetNumber = index.toDouble();
-                                    });
-                                    ref
-                                        .read(generalStatesProvider.notifier)
-                                        .addIndex(index);
-                                  },
-                                ),
+                              style: IconButton.styleFrom(
+                                backgroundColor: Colors.white,
                               ),
                             ),
-                          );
-                        },
-                      ),
-                      SizedBox(width: 8),
-                      IconButton.filled(
-                        onPressed: () {
-                          showPicker();
-                        },
-                        icon: Icon(Icons.calendar_month_rounded),
-                        style: IconButton.styleFrom(
-                          backgroundColor: Colors.blue,
-                          elevation: 10,
+                            IconButton.filled(
+                              onPressed: () =>
+                                  Navigator.pushNamed(context, '/searchPage'),
+                              icon: const Icon(
+                                Icons.add,
+                                color: Colors.black45,
+                              ),
+                              iconSize: 28,
+
+                              style: IconButton.styleFrom(
+                                backgroundColor: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 30,
+                              width: 0,
+                              child: VerticalDivider(color: Colors.white54),
+                            ),
+                          ],
                         ),
-                        iconSize: 16,
-                        color: Colors.white,
                       ),
+                      SizedBox(height: context.hp(1)),
                     ],
                   ),
                 ),
               ),
-            ),
-            SliverList.builder(
-              itemCount: mockMatches.length,
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8.0,
-                  vertical: 5,
-                ),
-                child: GameTile(
-                  icondata: Icons.person,
-                  gametime: mockMatches[index].gameTime,
-                  isLive: mockMatches[index].isLive,
-                  isFavorite: mockMatches[index].isFavorite,
-                  homeTeam: mockMatches[index].homeTeam,
-                  awayTeam: mockMatches[index].awayTeam,
-                  homeScores: mockMatches[index].homeScore.toString(),
-                  awayScores: mockMatches[index].awayScore.toString(),
+              SliverPersistentHeader(
+                pinned: true,
+                delegate: _datePicker(
+                  maxHeight: 90,
+                  minHeight: 90,
+                  child: Container(
+                    height: 90,
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          spreadRadius: .05,
+                          blurRadius: 2,
+                          color: Colors.black12,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton.filled(
+                          onPressed: () {},
+                          icon: const Icon(Icons.mail),
+                          iconSize: 16,
+                          color: Colors.white,
+                          style: IconButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            elevation: 3,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Consumer(
+                          builder: (context, ref, child) {
+                            final selectedIndex = ref.watch(
+                              generalStatesProvider,
+                            );
+
+                            return Expanded(
+                              child: ListView.builder(
+                                controller: dateListScroll,
+                                scrollDirection: Axis.horizontal,
+                                itemCount: 8,
+                                itemBuilder: (context, index) => Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    // horizontal: 3,
+                                    vertical: 15,
+                                  ),
+                                  child: DateTile(
+                                    selectedIndex: selectedIndex.selectedIndex,
+                                    index: index,
+                                    onTap: () {
+                                      setState(() {
+                                        offsetNumber = index.toDouble();
+                                      });
+                                      ref
+                                          .read(generalStatesProvider.notifier)
+                                          .addIndex(index);
+                                    },
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                        const SizedBox(width: 8),
+                        IconButton.filled(
+                          onPressed: () {
+                            showPicker();
+                          },
+                          icon: const Icon(Icons.calendar_month_rounded),
+                          style: IconButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            elevation: 10,
+                          ),
+                          iconSize: 16,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ],
+              SliverList.builder(
+                itemCount: mockMatches.length,
+                itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8.0,
+                    vertical: 5,
+                  ),
+                  child: GameTile(
+                    icondata: Icons.person,
+                    gametime: mockMatches[index].gameTime,
+                    isLive: mockMatches[index].isLive,
+                    isFavorite: mockMatches[index].isFavorite,
+                    homeTeam: mockMatches[index].homeTeam,
+                    awayTeam: mockMatches[index].awayTeam,
+                    homeScores: mockMatches[index].homeScore.toString(),
+                    awayScores: mockMatches[index].awayScore.toString(),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
