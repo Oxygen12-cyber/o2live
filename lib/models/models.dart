@@ -14,7 +14,7 @@ Widget dateContainer(String text) => Container(
   alignment: Alignment.center,
   child: Text(
     text,
-    style: TextStyle(
+    style: const TextStyle(
       color: Colors.white,
       fontSize: 14,
       fontWeight: FontWeight.bold,

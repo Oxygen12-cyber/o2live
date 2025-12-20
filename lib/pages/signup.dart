@@ -59,7 +59,7 @@ class _LoginPageState extends State<SignUp> {
           ),
           Positioned.fill(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -123,15 +123,15 @@ class _LoginPageState extends State<SignUp> {
                       onPressed: () {},
 
                       style: OutlinedButton.styleFrom(
-                        overlayColor: Color(0xff7d34eb),
+                        overlayColor: const Color(0xff7d34eb),
 
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 30,
                           vertical: 25,
                         ),
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(
-                            color: const Color(0xff7d34eb),
+                          side: const BorderSide(
+                            color: Color(0xff7d34eb),
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(18),
@@ -143,7 +143,7 @@ class _LoginPageState extends State<SignUp> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           spacing: 15,
                           children: [
-                            FaIcon(
+                            const FaIcon(
                               FontAwesomeIcons.google,
                               size: 24,
                               color: Colors.black,
@@ -169,14 +169,14 @@ class _LoginPageState extends State<SignUp> {
                       onPressed: () {},
 
                       style: OutlinedButton.styleFrom(
-                        overlayColor: Color(0xff7d34eb),
-                        padding: EdgeInsets.symmetric(
+                        overlayColor: const Color(0xff7d34eb),
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 30,
                           vertical: 25,
                         ),
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(
-                            color: const Color(0xff7d34eb),
+                          side: const BorderSide(
+                            color: Color(0xff7d34eb),
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(18),
@@ -188,7 +188,7 @@ class _LoginPageState extends State<SignUp> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           spacing: 15,
                           children: [
-                            FaIcon(
+                            const FaIcon(
                               FontAwesomeIcons.apple,
                               size: 24,
                               color: Colors.black,

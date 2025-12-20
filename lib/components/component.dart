@@ -29,9 +29,9 @@ class CustomTextField extends StatelessWidget {
         color: Colors.black,
       ),
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 5, vertical: 20),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 5, vertical: 20),
         hintText: hinttext,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: Colors.black38,
           fontSize: 17,
           fontWeight: FontWeight.bold,
@@ -39,11 +39,11 @@ class CustomTextField extends StatelessWidget {
         prefixIcon: prefixIcon,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(width: 2, color: Colors.black38),
+          borderSide: const BorderSide(width: 2, color: Colors.black38),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(width: 3, color: const Color(0xff7d34eb)),
+          borderSide: const BorderSide(width: 3, color: Color(0xff7d34eb)),
         ),
       ),
     );
@@ -81,12 +81,12 @@ class GameTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(18),
         color: Colors.white,
         boxShadow: [
-          BoxShadow(spreadRadius: .05, blurRadius: 15, color: Colors.black12),
+          const BoxShadow(spreadRadius: .05, blurRadius: 15, color: Colors.black12),
         ],
       ),
       child: ListTile(
         onTap: onTap,
-        contentPadding: EdgeInsets.only(
+        contentPadding: const EdgeInsets.only(
           left: 0,
           right: 12,
           top: 12,
@@ -113,10 +113,10 @@ class GameTile extends StatelessWidget {
                           color: Colors.red.withAlpha(80),
                           spreadRadius: 10,
                           blurRadius: 30,
-                          offset: Offset(10, 0),
+                          offset: const Offset(10, 0),
                         ),
                       ],
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(0),
                         topRight: Radius.circular(8),
                         bottomLeft: Radius.circular(0),
@@ -124,11 +124,11 @@ class GameTile extends StatelessWidget {
                       ),
                     ),
                   )
-                : SizedBox(width: 6),
+                : const SizedBox(width: 6),
             SizedBox(width: context.wp(3)),
             Text(
               gametime ?? 'null',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black54,
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
@@ -143,14 +143,14 @@ class GameTile extends StatelessWidget {
               spacing: 10,
               children: [
                 Icon(icondata, size: 24),
-                Text(homeTeam, style: TextStyle(color: Colors.black)),
+                Text(homeTeam, style: const TextStyle(color: Colors.black)),
               ],
             ),
             Row(
               spacing: 10,
               children: [
                 Icon(icondata, size: 24),
-                Text(awayTeam, style: TextStyle(color: Colors.black)),
+                Text(awayTeam, style: const TextStyle(color: Colors.black)),
               ],
             ),
           ],
@@ -167,7 +167,7 @@ class GameTile extends StatelessWidget {
               children: [
                 Text(
                   homeScores ?? '0',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -175,7 +175,7 @@ class GameTile extends StatelessWidget {
                 ),
                 Text(
                   awayScores ?? '0',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -228,7 +228,7 @@ class DateTile extends StatelessWidget {
       child: Container(
         width: 40,
         height: 40,
-        padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: index == selectedIndex ? Colors.grey : Colors.white,

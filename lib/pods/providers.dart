@@ -17,7 +17,7 @@ class PeriStates {
 class GeneralStatesNotifier extends Notifier<PeriStates> {
   @override
   PeriStates build() {
-    return PeriStates(selectedIndex: 0, listOffset: 0);
+    return const PeriStates(selectedIndex: 0, listOffset: 0);
   }
 
   void addIndex(int index) {

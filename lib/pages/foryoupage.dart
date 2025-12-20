@@ -1,8 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:o2live/components/component.dart';
-import 'package:o2live/models/models.dart';
 
 class ForYouPage extends StatefulWidget {
   const ForYouPage({super.key});

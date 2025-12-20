@@ -30,4 +30,4 @@ class _FavoritePageState extends State<FavoritePage> {
   }
 }
 
-Widget field() => TextField(decoration: InputDecoration(hintText: 'search'));
+Widget field() => const TextField(decoration: InputDecoration(hintText: 'search'));

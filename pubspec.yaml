@@ -45,6 +45,8 @@ dependencies:
   flutter_dotenv:
   intl: ^0.20.2
   table_calendar: ^3.2.0
+  json_annotation: ^4.9.0
+  redis: ^4.0.0
   
 
 dev_dependencies:
@@ -59,6 +61,8 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   custom_lint:
   riverpod_lint: ^3.0.3
+  json_serializable: ^6.11.2
+  build_runner:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

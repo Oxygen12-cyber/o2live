@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Widget> pages = [SportPage(), FavoritePage(), ForYouPage()];
+  final List<Widget> pages = [const SportPage(), const FavoritePage(), const ForYouPage()];
   int currentIndex = 0;
 
   @override

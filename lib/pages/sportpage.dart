@@ -5,7 +5,10 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:o2live/components/component.dart';
 import 'package:o2live/extensions/extension.dart';
 import 'package:o2live/models/models.dart';
+import 'package:o2live/pages/sportinfopage.dart';
 import 'package:o2live/pods/providers.dart';
+import 'package:o2live/service/api/apimodels.dart';
+import 'package:o2live/service/api/apiservice.dart';
 
 class SportPage extends StatefulWidget {
   const SportPage({super.key});
@@ -17,10 +20,24 @@ class SportPage extends StatefulWidget {
 class _SportPageState extends State<SportPage> {
   double offsetNumber = 0;
   int number_of_dates = 8;
+  List<Data> myList = [];
   late final ScrollController dateListScroll;
+
+  Future distributeData() async {
+    final apiService = ApiService();
+    final newData = await apiService.getApiData();
+
+    final List<Data> distroData = (newData as List)
+        .map((e) => Data.fromJson(e))
+        .toList();
+    setState(() {
+      myList.addAll(distroData);
+    });
+  }
 
   @override
   void initState() {
+    distributeData();
     dateListScroll = ScrollController(
       initialScrollOffset: number_of_dates / 2,
       keepScrollOffset: true,
@@ -255,23 +272,40 @@ class _SportPageState extends State<SportPage> {
                 ),
               ),
               SliverList.builder(
-                itemCount: mockMatches.length,
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                    vertical: 5,
-                  ),
-                  child: GameTile(
-                    icondata: Icons.person,
-                    gametime: mockMatches[index].gameTime,
-                    isLive: mockMatches[index].isLive,
-                    isFavorite: mockMatches[index].isFavorite,
-                    homeTeam: mockMatches[index].homeTeam,
-                    awayTeam: mockMatches[index].awayTeam,
-                    homeScores: mockMatches[index].homeScore.toString(),
-                    awayScores: mockMatches[index].awayScore.toString(),
-                  ),
-                ),
+                itemCount: myList.length,
+                itemBuilder: (context, index) {
+                  final apdata = myList[index];
+
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0,
+                      vertical: 5,
+                    ),
+                    child: GameTile(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Sportinfopage(
+                              sportsdata: mockMatches[index].homeTeam,
+                            ),
+                          ),
+                        );
+                      },
+                      icondata: Icons.person,
+                      gametime: mockMatches[index].gameTime,
+                      isLive: mockMatches[index].isLive,
+                      isFavorite: mockMatches[index].isFavorite,
+                      homeTeam:
+
+                          apdata?.teams?.home.name ?? 'home team',
+                      awayTeam:
+                          apdata?.teams?.away.name ?? 'away team',
+                      homeScores: mockMatches[index].homeScore.toString(),
+                      awayScores: mockMatches[index].awayScore.toString(),
+                    ),
+                  );
+                },
               ),
             ],
           ),

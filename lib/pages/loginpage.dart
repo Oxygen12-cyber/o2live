@@ -27,13 +27,13 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 'Welcome Back!',
                 textAlign: TextAlign.left,
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
               child: CustomTextField(
                 controller: emailController,
                 hinttext: 'Email',
-                prefixIcon: Icon(Iconsax.message),
+                prefixIcon: const Icon(Iconsax.message),
               ),
             ),
             SizedBox(height: context.hp(4)),
@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
               child: CustomTextField(
                 controller: passwordController,
                 hinttext: 'Password',
-                prefixIcon: Icon(Iconsax.password_check),
+                prefixIcon: const Icon(Iconsax.password_check),
               ),
             ),
             SizedBox(height: context.hp(1)),
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                     onTap: () {
                       debugPrint('forgot password');
                     },
-                    child: Text(
+                    child: const Text(
                       'forgot Password?',
                       style: TextStyle(
                         fontSize: 16,
@@ -101,20 +101,20 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: context.hp(3)),
 
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/homePage');
                 },
 
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   ),
                   backgroundColor: const Color(0xff7d34eb),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Sign in',
                     style: TextStyle(color: Colors.white, fontSize: 20),
