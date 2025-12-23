@@ -8,46 +8,44 @@ part of 'sporteventstatus.dart';
 
 SportEventStatus _$SportEventStatusFromJson(Map<String, dynamic> json) =>
     SportEventStatus(
-      status: json['status'] as String,
-      matchStatus: json['match_status'] as String,
-      homeScore: (json['home_score'] as num).toInt(),
-      awayScore: (json['away_score'] as num).toInt(),
-      periodScores: (json['period_scores'] as List<dynamic>)
+      json['status'] as String,
+      json['matchStatus'] as String,
+      (json['homeScore'] as num).toInt(),
+      (json['awayScore'] as num).toInt(),
+      (json['periodScores'] as List<dynamic>)
           .map((e) => PeriodScores.fromJson(e as Map<String, dynamic>))
           .toList(),
-      matchTie: json['match_tie'] as bool,
-      ballLocations: (json['ball_locations'] as List<dynamic>)
+      json['matchTie'] as bool,
+      (json['ballLocations'] as List<dynamic>)
           .map((e) => BallLocations.fromJson(e as Map<String, dynamic>))
           .toList(),
-      matchSituation: MatchSituation.fromJson(
-        json['match_situation'] as Map<String, dynamic>,
-      ),
+      MatchSituation.fromJson(json['matchSituation'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SportEventStatusToJson(SportEventStatus instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'match_status': instance.matchStatus,
-      'home_score': instance.homeScore,
-      'away_score': instance.awayScore,
-      'period_scores': instance.periodScores,
-      'match_tie': instance.matchTie,
-      'ball_locations': instance.ballLocations,
-      'match_situation': instance.matchSituation,
+      'matchStatus': instance.matchStatus,
+      'homeScore': instance.homeScore,
+      'awayScore': instance.awayScore,
+      'periodScores': instance.periodScores,
+      'matchTie': instance.matchTie,
+      'ballLocations': instance.ballLocations,
+      'matchSituation': instance.matchSituation,
     };
 
 MatchSituation _$MatchSituationFromJson(Map<String, dynamic> json) =>
     MatchSituation(
       status: json['status'] as String,
       qualifier: json['qualifier'] as String,
-      updatedAt: json['updated_at'] as String,
+      updatedAt: json['updatedAt'] as String,
     );
 
 Map<String, dynamic> _$MatchSituationToJson(MatchSituation instance) =>
     <String, dynamic>{
       'status': instance.status,
       'qualifier': instance.qualifier,
-      'updated_at': instance.updatedAt,
+      'updatedAt': instance.updatedAt,
     };
 
 BallLocations _$BallLocationsFromJson(Map<String, dynamic> json) =>
@@ -67,16 +65,16 @@ Map<String, dynamic> _$BallLocationsToJson(BallLocations instance) =>
     };
 
 PeriodScores _$PeriodScoresFromJson(Map<String, dynamic> json) => PeriodScores(
-  homeScore: (json['home_score'] as num).toInt(),
-  awayScore: (json['away_score'] as num).toInt(),
+  homeScore: (json['homeScore'] as num).toInt(),
+  awayScore: (json['awayScore'] as num).toInt(),
   type: json['type'] as String,
   number: (json['number'] as num).toInt(),
 );
 
 Map<String, dynamic> _$PeriodScoresToJson(PeriodScores instance) =>
     <String, dynamic>{
-      'home_score': instance.homeScore,
-      'away_score': instance.awayScore,
+      'homeScore': instance.homeScore,
+      'awayScore': instance.awayScore,
       'type': instance.type,
       'number': instance.number,
     };

@@ -8,10 +8,10 @@ part of 'sportevent.dart';
 
 SportEvent _$SportEventFromJson(Map<String, dynamic> json) => SportEvent(
   id: json['id'] as String,
-  startTime: json['start_time'] as String,
-  startTimeConfirmed: json['start_time_confirmed'] as bool,
+  startTime: json['startTime'] as String,
+  startTimeConfirmed: json['startTimeConfirmed'] as String,
   sportEventContext: SportEventContext.fromJson(
-    json['sport_event_context'] as Map<String, dynamic>,
+    json['sportEventContext'] as Map<String, dynamic>,
   ),
   coverage: Coverage.fromJson(json['coverage'] as Map<String, dynamic>),
   competitors: (json['competitors'] as List<dynamic>)
@@ -19,49 +19,49 @@ SportEvent _$SportEventFromJson(Map<String, dynamic> json) => SportEvent(
       .toList(),
   venue: Venue.fromJson(json['venue'] as Map<String, dynamic>),
   sportEventConditions: SportEventConditions.fromJson(
-    json['sport_event_conditions'] as Map<String, dynamic>,
+    json['sportEventConditions'] as Map<String, dynamic>,
   ),
 );
 
 Map<String, dynamic> _$SportEventToJson(SportEvent instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'start_time': instance.startTime,
-      'start_time_confirmed': instance.startTimeConfirmed,
-      'sport_event_context': instance.sportEventContext,
+      'startTime': instance.startTime,
+      'startTimeConfirmed': instance.startTimeConfirmed,
+      'sportEventContext': instance.sportEventContext,
       'coverage': instance.coverage,
       'competitors': instance.competitors,
       'venue': instance.venue,
-      'sport_event_conditions': instance.sportEventConditions,
+      'sportEventConditions': instance.sportEventConditions,
     };
 
 Venue _$VenueFromJson(Map<String, dynamic> json) => Venue(
   id: json['id'] as String,
   name: json['name'] as String,
   capacity: (json['capacity'] as num).toInt(),
-  cityName: json['city_name'] as String,
-  countryName: json['country_name'] as String,
-  mapCoordinates: json['map_coordinates'] as String,
-  countryCode: json['country_code'] as String,
-  timeZone: json['timezone'] as String,
+  cityName: json['cityName'] as String,
+  countryName: json['countryName'] as String,
+  mapCoordinates: json['mapCoordinates'] as String,
+  countryCode: json['countryCode'] as String,
+  timeZone: json['timeZone'] as String,
 );
 
 Map<String, dynamic> _$VenueToJson(Venue instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
   'capacity': instance.capacity,
-  'city_name': instance.cityName,
-  'country_name': instance.countryName,
-  'map_coordinates': instance.mapCoordinates,
-  'country_code': instance.countryCode,
-  'timezone': instance.timeZone,
+  'cityName': instance.cityName,
+  'countryName': instance.countryName,
+  'mapCoordinates': instance.mapCoordinates,
+  'countryCode': instance.countryCode,
+  'timeZone': instance.timeZone,
 };
 
 Competitors _$CompetitorsFromJson(Map<String, dynamic> json) => Competitors(
   id: json['id'] as String,
   name: json['name'] as String,
   country: json['country'] as String,
-  countryCode: json['country_code'] as String,
+  countryCode: json['countryCode'] as String,
   abbreviation: json['abbreviation'] as String,
   qualifier: json['qualifier'] as String,
   gender: json['gender'] as String,
@@ -72,7 +72,7 @@ Map<String, dynamic> _$CompetitorsToJson(Competitors instance) =>
       'id': instance.id,
       'name': instance.name,
       'country': instance.country,
-      'country_code': instance.countryCode,
+      'countryCode': instance.countryCode,
       'abbreviation': instance.abbreviation,
       'qualifier': instance.qualifier,
       'gender': instance.gender,
@@ -81,13 +81,13 @@ Map<String, dynamic> _$CompetitorsToJson(Competitors instance) =>
 Coverage _$CoverageFromJson(Map<String, dynamic> json) => Coverage(
   type: json['type'] as String,
   sportEventProperties: SportEventProperties.fromJson(
-    json['sport_event_properties'] as Map<String, dynamic>,
+    json['sportEventProperties'] as Map<String, dynamic>,
   ),
 );
 
 Map<String, dynamic> _$CoverageToJson(Coverage instance) => <String, dynamic>{
   'type': instance.type,
-  'sport_event_properties': instance.sportEventProperties,
+  'sportEventProperties': instance.sportEventProperties,
 };
 
 SportEventProperties _$SportEventPropertiesFromJson(
@@ -96,23 +96,23 @@ SportEventProperties _$SportEventPropertiesFromJson(
   lineups: json['lineups'] as bool,
   formations: json['formations'] as bool,
   venue: json['venue'] as bool,
-  extendedPlayByPlay: json['extended_play_by_play'] as bool,
-  extendedPlayerStats: json['extended_player_stats'] as bool,
-  extendedTeamStats: json['extended_team_stats'] as bool,
-  lineupsAvailability: json['lineups_availability'] as String,
-  ballSpotting: json['ball_spotting'] as bool,
+  extendedPlayByPlay: json['extendedPlayByPlay'] as bool,
+  extendedPlayerStats: json['extendedPlayerStats'] as bool,
+  extendedTeamStats: json['extendedTeamStats'] as bool,
+  lineupsAvailability: json['lineupsAvailability'] as String,
+  ballSpotting: json['ballSpotting'] as bool,
   commentary: json['commentary'] as bool,
-  funFacts: json['fun_facts'] as bool,
-  goalScorers: json['goal_scorers'] as bool,
-  goalScorersLive: json['goal_scorers_live'] as bool,
+  funFacts: json['funFacts'] as bool,
+  goalScorers: json['goalScorers'] as bool,
+  goalScorersLive: json['goalScorersLive'] as bool,
   scores: json['scores'] as String,
-  gameClock: json['game_clock'] as bool,
-  deeperPlayByPlay: json['deeper_play_by_play'] as bool,
-  deeperPlayerStats: json['deeper_player_stats'] as bool,
-  deeperTeamStats: json['deeper_team_stats'] as bool,
-  basicPlayByPlay: json['basic_play_by_play'] as bool,
-  basicPlayerStats: json['basic_player_stats'] as bool,
-  basicTeamStats: json['basic_team_stats'] as bool,
+  gameClock: json['gameClock'] as bool,
+  deeperPlayByPlay: json['deeperPlayByPlay'] as bool,
+  deeperPlayerStats: json['deeperPlayerStats'] as bool,
+  deeperTeamStats: json['deeperTeamStats'] as bool,
+  basicPlayByPlay: json['basicPlayByPlay'] as bool,
+  basicPlayerStats: json['basicPlayerStats'] as bool,
+  basicTeamStats: json['basicTeamStats'] as bool,
 );
 
 Map<String, dynamic> _$SportEventPropertiesToJson(
@@ -121,23 +121,23 @@ Map<String, dynamic> _$SportEventPropertiesToJson(
   'lineups': instance.lineups,
   'formations': instance.formations,
   'venue': instance.venue,
-  'extended_play_by_play': instance.extendedPlayByPlay,
-  'extended_player_stats': instance.extendedPlayerStats,
-  'extended_team_stats': instance.extendedTeamStats,
-  'lineups_availability': instance.lineupsAvailability,
-  'ball_spotting': instance.ballSpotting,
+  'extendedPlayByPlay': instance.extendedPlayByPlay,
+  'extendedPlayerStats': instance.extendedPlayerStats,
+  'extendedTeamStats': instance.extendedTeamStats,
+  'lineupsAvailability': instance.lineupsAvailability,
+  'ballSpotting': instance.ballSpotting,
   'commentary': instance.commentary,
-  'fun_facts': instance.funFacts,
-  'goal_scorers': instance.goalScorers,
-  'goal_scorers_live': instance.goalScorersLive,
+  'funFacts': instance.funFacts,
+  'goalScorers': instance.goalScorers,
+  'goalScorersLive': instance.goalScorersLive,
   'scores': instance.scores,
-  'game_clock': instance.gameClock,
-  'deeper_play_by_play': instance.deeperPlayByPlay,
-  'deeper_player_stats': instance.deeperPlayerStats,
-  'deeper_team_stats': instance.deeperTeamStats,
-  'basic_play_by_play': instance.basicPlayByPlay,
-  'basic_player_stats': instance.basicPlayerStats,
-  'basic_team_stats': instance.basicTeamStats,
+  'gameClock': instance.gameClock,
+  'deeperPlayByPlay': instance.deeperPlayByPlay,
+  'deeperPlayerStats': instance.deeperPlayerStats,
+  'deeperTeamStats': instance.deeperTeamStats,
+  'basicPlayByPlay': instance.basicPlayByPlay,
+  'basicPlayerStats': instance.basicPlayerStats,
+  'basicTeamStats': instance.basicTeamStats,
 };
 
 SportEventConditions _$SportEventConditionsFromJson(
@@ -164,7 +164,7 @@ Referee _$RefereeFromJson(Map<String, dynamic> json) => Referee(
   id: json['id'] as String,
   name: json['name'] as String,
   nationality: json['nationality'] as String,
-  countryCode: json['country_code'] as String,
+  countryCode: json['countryCode'] as String,
   type: json['type'] as String,
 );
 
@@ -172,18 +172,18 @@ Map<String, dynamic> _$RefereeToJson(Referee instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
   'nationality': instance.nationality,
-  'country_code': instance.countryCode,
+  'countryCode': instance.countryCode,
   'type': instance.type,
 };
 
 Weather _$WeatherFromJson(Map<String, dynamic> json) => Weather(
-  pitchConditions: json['pitch_conditions'] as String,
-  overallConditions: json['overall_conditions'] as String,
+  pitchConditions: json['pitchConditions'] as String,
+  overallConditions: json['overallConditions'] as String,
 );
 
 Map<String, dynamic> _$WeatherToJson(Weather instance) => <String, dynamic>{
-  'pitch_conditions': instance.pitchConditions,
-  'overall_conditions': instance.overallConditions,
+  'pitchConditions': instance.pitchConditions,
+  'overallConditions': instance.overallConditions,
 };
 
 Ground _$GroundFromJson(Map<String, dynamic> json) =>

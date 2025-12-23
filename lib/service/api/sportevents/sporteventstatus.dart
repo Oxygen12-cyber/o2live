@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'sporteventstatus.g.dart';
 
 // Main Class
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class SportEventStatus {
   final String status;
   final String matchStatus;
@@ -14,16 +14,16 @@ class SportEventStatus {
   final List<BallLocations> ballLocations;
   final MatchSituation matchSituation;
 
-  SportEventStatus({
-    required this.status,
-    required this.matchStatus,
-    required this.homeScore,
-    required this.awayScore,
-    required this.periodScores,
-    required this.matchTie,
-    required this.ballLocations,
-    required this.matchSituation,
-  });
+  SportEventStatus(
+    this.status,
+    this.matchStatus,
+    this.homeScore,
+    this.awayScore,
+    this.periodScores,
+    this.matchTie,
+    this.ballLocations,
+    this.matchSituation,
+  );
 
   factory SportEventStatus.fromJson(Map<String, dynamic> json) =>
       _$SportEventStatusFromJson(json);
@@ -31,7 +31,7 @@ class SportEventStatus {
 
 // Sub Classes
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class MatchSituation {
   final String status;
   final String qualifier;
@@ -47,7 +47,7 @@ class MatchSituation {
       _$MatchSituationFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class BallLocations {
   final int order;
   final int x;
@@ -65,7 +65,7 @@ class BallLocations {
       _$BallLocationsFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class PeriodScores {
   final int homeScore;
   final int awayScore;

@@ -4,11 +4,11 @@ import 'package:o2live/service/api/sportevents/sporteventcontext.dart';
 part 'sportevent.g.dart';
 
 // Main
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class SportEvent {
   final String id;
   final String startTime;
-  final bool startTimeConfirmed;
+  final String startTimeConfirmed;
   final SportEventContext sportEventContext;
   final Coverage coverage;
   final List<Competitors> competitors;
@@ -30,7 +30,7 @@ class SportEvent {
       _$SportEventFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class Venue {
   final String id;
   final String name;
@@ -39,7 +39,6 @@ class Venue {
   final String countryName;
   final String mapCoordinates;
   final String countryCode;
-  @JsonKey(name: 'timezone')
   final String timeZone;
 
   Venue({
@@ -56,7 +55,7 @@ class Venue {
   factory Venue.fromJson(Map<String, dynamic> json) => _$VenueFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class Competitors {
   final String id;
   final String name;
@@ -81,7 +80,7 @@ class Competitors {
 }
 
 // Coverage
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class Coverage {
   final String type;
   final SportEventProperties sportEventProperties;
@@ -92,7 +91,7 @@ class Coverage {
       _$CoverageFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class SportEventProperties {
   final bool lineups;
   final bool formations;
@@ -143,7 +142,7 @@ class SportEventProperties {
 }
 
 //event conditions
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class SportEventConditions {
   final List<Referee> referee;
   final Weather weather;
@@ -161,7 +160,7 @@ class SportEventConditions {
       _$SportEventConditionsFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class Referee {
   final String id;
   final String name;
@@ -181,9 +180,8 @@ class Referee {
       _$RefereeFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class Weather {
-  @JsonKey(name: 'pitch_conditions')
   final String pitchConditions;
   final String overallConditions;
 
@@ -193,7 +191,7 @@ class Weather {
       _$WeatherFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class Ground {
   final bool neutral;
 
@@ -202,7 +200,7 @@ class Ground {
   factory Ground.fromJson(Map<String, dynamic> json) => _$GroundFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable()
 class Lineups {
   final bool confirmed;
 
