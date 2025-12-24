@@ -8,7 +8,7 @@ part 'sportevent.g.dart';
 class SportEvent {
   final String id;
   final String startTime;
-  final String startTimeConfirmed;
+  final bool startTimeConfirmed;
   final SportEventContext sportEventContext;
   final Coverage coverage;
   final List<Competitors> competitors;
