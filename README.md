@@ -40,17 +40,17 @@ Whether you are tracking a local derby or a major international tournament, 02 L
 > *Check out the smooth animations and user flow.*
 > (Ensure `assets/videos/mbappe.mp4` is present or update the link below)
 
-[Watch Preview Video](assets/videos/mbappe.mp4)
+
+
+<video src="https://github.com/user-attachments/assets/ec0b5b20-23fd-4f0c-85d0-a909cd0f1c92" controls></video>
+
+
 
 ### 📱 Interface Preview
 <div align="center">
-  <!-- Upload your screenshots to assets/images/ and uncomment the lines below -->
-  <!-- 
-  <img src="assets/images/home_screen.png" width="200" />
-  <img src="assets/images/stats_screen.png" width="200" />
-  <img src="assets/images/ai_prediction.png" width="200" />
-  -->
-  <p><i>Screenshots coming soon...</i></p>
+  <img width="1332" height="819" alt="Screenshot From 2025-12-24 11-23-12" src="https://github.com/user-attachments/assets/29ef787f-efc3-4522-9498-d9ef98853ca2" />
+  <img width="1332" height="819" alt="Screenshot From 2025-12-24 11-23-27" src="https://github.com/user-attachments/assets/e3f709ad-c8b7-429f-8343-013d92e1e62c" />
+  <img width="752" height="1000" alt="Screenshot From 2025-12-18 12-19-05" src="https://github.com/user-attachments/assets/12b18414-8bb0-42d4-9ec1-34b9f5df3081" />
 </div>
 
 ## 🛠️ Technology Stack
