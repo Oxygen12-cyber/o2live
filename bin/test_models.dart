@@ -7,14 +7,17 @@ void main() async {
 
   final baseUrl = 'https://api.sportradar.com/soccer-extended/trial/v4/en';
   final date = '2025-06-01';
-  final url = Uri.parse('$baseUrl/schedules/$date/schedules.json/?limit=3');
+  final url = Uri.parse('$baseUrl/schedules/$date/schedules.json?limit=3');
 
   print('Fetching data from: $url');
 
   try {
     final response = await http.get(
       url,
-      headers: {'x-api-key': 'WzfL8udyeaGNINE7zPbtmpXWO1PeS6uit6tfxZEd'},
+      headers: {
+        "accept": "application/json",
+        'x-api-key': 'WzfL8udyeaGNINE7zPbtmpXWO1PeS6uit6tfxZEd',
+      },
     );
 
     if (response.statusCode != 200) {
@@ -37,15 +40,12 @@ void main() async {
     print('Generated Time: ${modelData.generatedTime}');
     print('Number of schedules: ${modelData.schedules.length}');
 
-    if (modelData.schedules.isNotEmpty) {
-      final firstSchedule = modelData.schedules.first;
-      print('First Match ID: ${firstSchedule.sportEvent.id}');
-      print('Competitors:');
-      for (var competitor in firstSchedule.sportEvent.competitors) {
-        print(' - ${competitor.name} (${competitor.qualifier})');
-      }
-      print('Status: ${firstSchedule.sportEventStatus.matchStatus}');
-    }
+    final firstSchedule = modelData.schedules.first;
+    final hometeam = firstSchedule.sportEvent.competitors![0].name;
+
+    print('hometeam: $hometeam');
+    print('First Match ID: ${firstSchedule.sportEvent.id}');
+    print('starttime: ${firstSchedule.sportEvent.startTime}');
   } catch (e, s) {
     print('Error parsing data: $e');
     print('Stack trace: $s');

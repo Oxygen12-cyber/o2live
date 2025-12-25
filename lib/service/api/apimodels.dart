@@ -20,6 +20,7 @@ class Schedules {
 class SportRadar {
   @JsonKey(name: 'generated_at')
   final DateTime generatedTime;
+  
   final List<Schedules> schedules;
 
   SportRadar({required this.generatedTime, required this.schedules});

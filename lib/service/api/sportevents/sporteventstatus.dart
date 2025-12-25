@@ -3,38 +3,42 @@ import 'package:json_annotation/json_annotation.dart';
 part 'sporteventstatus.g.dart';
 
 // Main Class
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class SportEventStatus {
   final String status;
   final String matchStatus;
-  final int homeScore;
-  final int awayScore;
-  final List<PeriodScores> periodScores;
-  final bool matchTie;
-  final List<BallLocations> ballLocations;
-  final MatchSituation matchSituation;
+  final int? homeScore;
+  final int? awayScore;
+  final List<PeriodScores>? periodScores;
 
-  SportEventStatus(
-    this.status,
-    this.matchStatus,
-    this.homeScore,
-    this.awayScore,
-    this.periodScores,
-    this.matchTie,
-    this.ballLocations,
-    this.matchSituation,
-  );
+  
+  final bool? matchTie;
+
+  final List<BallLocations>? ballLocations;
+  final MatchSituation? matchSituation;
+
+  SportEventStatus({
+    required this.status,
+    required this.matchStatus,
+    required this.homeScore,
+    required this.awayScore,
+    required this.periodScores,
+    required this.matchTie,
+    required this.ballLocations,
+    required this.matchSituation,
+  });
 
   factory SportEventStatus.fromJson(Map<String, dynamic> json) =>
       _$SportEventStatusFromJson(json);
 }
 
 // Sub Classes
-
 @JsonSerializable()
 class MatchSituation {
   final String status;
   final String qualifier;
+
+  @JsonKey(name: 'updated_at')
   final String updatedAt;
 
   MatchSituation({
@@ -49,10 +53,10 @@ class MatchSituation {
 
 @JsonSerializable()
 class BallLocations {
-  final int order;
-  final int x;
-  final int y;
-  final String qualifier;
+  final int? order;
+  final int? x;
+  final int? y;
+  final String? qualifier;
 
   BallLocations({
     required this.order,
@@ -65,12 +69,12 @@ class BallLocations {
       _$BallLocationsFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class PeriodScores {
-  final int homeScore;
-  final int awayScore;
-  final String type;
-  final int number;
+  final int? homeScore;
+  final int? awayScore;
+  final String? type;
+  final int? number;
 
   PeriodScores({
     required this.homeScore,

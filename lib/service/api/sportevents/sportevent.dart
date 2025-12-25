@@ -4,16 +4,16 @@ import 'package:o2live/service/api/sportevents/sporteventcontext.dart';
 part 'sportevent.g.dart';
 
 // Main
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class SportEvent {
   final String id;
-  final String startTime;
+  final DateTime startTime;
   final bool startTimeConfirmed;
-  final SportEventContext sportEventContext;
-  final Coverage coverage;
-  final List<Competitors> competitors;
-  final Venue venue;
-  final SportEventConditions sportEventConditions;
+  final SportEventContext? sportEventContext;
+  final Coverage? coverage;
+  final List<Competitors>? competitors;
+  final Venue? venue;
+  final SportEventConditions? sportEventConditions;
 
   SportEvent({
     required this.id,
@@ -30,16 +30,16 @@ class SportEvent {
       _$SportEventFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class Venue {
   final String id;
   final String name;
-  final int capacity;
-  final String cityName;
+  final int? capacity;
+  final String? cityName;
   final String countryName;
-  final String mapCoordinates;
-  final String countryCode;
-  final String timeZone;
+  final String?mapCoordinates;
+  final String? countryCode;
+  final String? timeZone;
 
   Venue({
     required this.id,
@@ -57,13 +57,16 @@ class Venue {
 
 @JsonSerializable()
 class Competitors {
-  final String id;
-  final String name;
-  final String country;
-  final String countryCode;
-  final String abbreviation;
-  final String qualifier;
-  final String gender;
+  final String? id;
+  final String? name;
+  final String? country;
+
+  @JsonKey(name: 'country_code')
+  final String? countryCode;
+  
+  final String? abbreviation;
+  final String? qualifier;
+  final String? gender;
 
   Competitors({
     required this.id,
@@ -80,9 +83,9 @@ class Competitors {
 }
 
 // Coverage
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class Coverage {
-  final String type;
+  final String? type;
   final SportEventProperties sportEventProperties;
 
   Coverage({required this.type, required this.sportEventProperties});
@@ -91,7 +94,7 @@ class Coverage {
       _$CoverageFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class SportEventProperties {
   final bool lineups;
   final bool formations;
@@ -99,13 +102,13 @@ class SportEventProperties {
   final bool extendedPlayByPlay;
   final bool extendedPlayerStats;
   final bool extendedTeamStats;
-  final String lineupsAvailability;
-  final bool ballSpotting;
+  final String? lineupsAvailability;
+  final bool ballspotting;
   final bool commentary;
   final bool funFacts;
   final bool goalScorers;
   final bool goalScorersLive;
-  final String scores;
+  final String? scores;
   final bool gameClock;
   final bool deeperPlayByPlay;
   final bool deeperPlayerStats;
@@ -122,7 +125,7 @@ class SportEventProperties {
     required this.extendedPlayerStats,
     required this.extendedTeamStats,
     required this.lineupsAvailability,
-    required this.ballSpotting,
+    required this.ballspotting,
     required this.commentary,
     required this.funFacts,
     required this.goalScorers,
@@ -144,7 +147,7 @@ class SportEventProperties {
 //event conditions
 @JsonSerializable()
 class SportEventConditions {
-  final List<Referee> referee;
+  final List<Referee>? referee;
   final Weather weather;
   final Ground ground;
   final Lineups lineups;
@@ -162,11 +165,14 @@ class SportEventConditions {
 
 @JsonSerializable()
 class Referee {
-  final String id;
-  final String name;
-  final String nationality;
-  final String countryCode;
-  final String type;
+  final String? id;
+  final String? name;
+  final String? nationality;
+
+  @JsonKey(name: 'country_code')
+  final String? countryCode;
+
+  final String? type;
 
   Referee({
     required this.id,
@@ -180,10 +186,10 @@ class Referee {
       _$RefereeFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class Weather {
-  final String pitchConditions;
-  final String overallConditions;
+  final String? pitchConditions;
+  final String? overallConditions;
 
   Weather({required this.pitchConditions, required this.overallConditions});
 

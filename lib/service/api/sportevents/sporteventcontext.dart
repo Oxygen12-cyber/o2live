@@ -4,13 +4,13 @@ part 'sporteventcontext.g.dart';
 
 @JsonSerializable()
 class SportEventContext {
-  final Sport sport;
-  final Category category;
-  final Competition competition;
-  final Season season;
-  final Stage stage;
-  final Round round;
-  final List<Groups> groups;
+  final Sport? sport;
+  final Category? category;
+  final Competition? competition;
+  final Season? season;
+  final Stage? stage;
+  final Round? round;
+  final List<Groups>? groups;
 
   SportEventContext({
     required this.sport,
@@ -38,11 +38,13 @@ class Sport {
 
 }
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class Category {
-  final String id;
-  final String name;
-  final String countryCode;
+  final String? id;
+  final String? name;
+
+  @JsonKey(name: 'country_code')
+  final String? countryCode;
 
   Category({
     required this.id,
@@ -56,10 +58,13 @@ class Category {
 
 @JsonSerializable()
 class Competition {
-  final String id;
-  final String name;
-  final String parentId;
-  final String gender;
+  final String? id;
+  final String? name;
+
+  @JsonKey(name: 'parent_id')
+  final String? parentId;
+
+  final String? gender;
 
   Competition({
     required this.id,
@@ -72,14 +77,14 @@ class Competition {
       _$CompetitionFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class Season {
-  final String id;
-  final String name;
-  final String startDate;
-  final String endDate;
-  final String year;
-  final String competitionId;
+  final String? id;
+  final String? name;
+  final String? startDate;
+  final String? endDate;
+  final String? year;
+  final String? competitionId;
 
   Season({
     required this.id,
@@ -93,14 +98,14 @@ class Season {
   factory Season.fromJson(Map<String, dynamic> json) => _$SeasonFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class Stage {
-  final String order;
-  final String type;
-  final String phase;
-  final String startDate;
-  final String endDate;
-  final String year;
+  final int? order;
+  final String? type;
+  final String? phase;
+  final DateTime? startDate;
+  final DateTime? endDate;
+  final String? year;
 
   Stage({
     required this.order,
@@ -116,7 +121,7 @@ class Stage {
 
 @JsonSerializable()
 class Round {
-  final int number;
+  final int? number;
 
   Round({required this.number});
 
@@ -125,8 +130,8 @@ class Round {
 
 @JsonSerializable()
 class Groups {
-  final String id;
-  final String name;
+  final String? id;
+  final String? name;
 
   Groups({required this.id, required this.name});
 

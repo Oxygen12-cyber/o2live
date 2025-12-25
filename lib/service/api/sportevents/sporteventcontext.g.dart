@@ -8,16 +8,26 @@ part of 'sporteventcontext.dart';
 
 SportEventContext _$SportEventContextFromJson(Map<String, dynamic> json) =>
     SportEventContext(
-      sport: Sport.fromJson(json['sport'] as Map<String, dynamic>),
-      category: Category.fromJson(json['category'] as Map<String, dynamic>),
-      competition: Competition.fromJson(
-        json['competition'] as Map<String, dynamic>,
-      ),
-      season: Season.fromJson(json['season'] as Map<String, dynamic>),
-      stage: Stage.fromJson(json['stage'] as Map<String, dynamic>),
-      round: Round.fromJson(json['round'] as Map<String, dynamic>),
-      groups: (json['groups'] as List<dynamic>)
-          .map((e) => Groups.fromJson(e as Map<String, dynamic>))
+      sport: json['sport'] == null
+          ? null
+          : Sport.fromJson(json['sport'] as Map<String, dynamic>),
+      category: json['category'] == null
+          ? null
+          : Category.fromJson(json['category'] as Map<String, dynamic>),
+      competition: json['competition'] == null
+          ? null
+          : Competition.fromJson(json['competition'] as Map<String, dynamic>),
+      season: json['season'] == null
+          ? null
+          : Season.fromJson(json['season'] as Map<String, dynamic>),
+      stage: json['stage'] == null
+          ? null
+          : Stage.fromJson(json['stage'] as Map<String, dynamic>),
+      round: json['round'] == null
+          ? null
+          : Round.fromJson(json['round'] as Map<String, dynamic>),
+      groups: (json['groups'] as List<dynamic>?)
+          ?.map((e) => Groups.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -41,77 +51,81 @@ Map<String, dynamic> _$SportToJson(Sport instance) => <String, dynamic>{
 };
 
 Category _$CategoryFromJson(Map<String, dynamic> json) => Category(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  countryCode: json['countryCode'] as String,
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  countryCode: json['country_code'] as String?,
 );
 
 Map<String, dynamic> _$CategoryToJson(Category instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
-  'countryCode': instance.countryCode,
+  'country_code': instance.countryCode,
 };
 
 Competition _$CompetitionFromJson(Map<String, dynamic> json) => Competition(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  parentId: json['parentId'] as String,
-  gender: json['gender'] as String,
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  parentId: json['parent_id'] as String?,
+  gender: json['gender'] as String?,
 );
 
 Map<String, dynamic> _$CompetitionToJson(Competition instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'parentId': instance.parentId,
+      'parent_id': instance.parentId,
       'gender': instance.gender,
     };
 
 Season _$SeasonFromJson(Map<String, dynamic> json) => Season(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  startDate: json['startDate'] as String,
-  endDate: json['endDate'] as String,
-  year: json['year'] as String,
-  competitionId: json['competitionId'] as String,
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  startDate: json['start_date'] as String?,
+  endDate: json['end_date'] as String?,
+  year: json['year'] as String?,
+  competitionId: json['competition_id'] as String?,
 );
 
 Map<String, dynamic> _$SeasonToJson(Season instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
-  'startDate': instance.startDate,
-  'endDate': instance.endDate,
+  'start_date': instance.startDate,
+  'end_date': instance.endDate,
   'year': instance.year,
-  'competitionId': instance.competitionId,
+  'competition_id': instance.competitionId,
 };
 
 Stage _$StageFromJson(Map<String, dynamic> json) => Stage(
-  order: json['order'] as String,
-  type: json['type'] as String,
-  phase: json['phase'] as String,
-  startDate: json['startDate'] as String,
-  endDate: json['endDate'] as String,
-  year: json['year'] as String,
+  order: (json['order'] as num?)?.toInt(),
+  type: json['type'] as String?,
+  phase: json['phase'] as String?,
+  startDate: json['start_date'] == null
+      ? null
+      : DateTime.parse(json['start_date'] as String),
+  endDate: json['end_date'] == null
+      ? null
+      : DateTime.parse(json['end_date'] as String),
+  year: json['year'] as String?,
 );
 
 Map<String, dynamic> _$StageToJson(Stage instance) => <String, dynamic>{
   'order': instance.order,
   'type': instance.type,
   'phase': instance.phase,
-  'startDate': instance.startDate,
-  'endDate': instance.endDate,
+  'start_date': instance.startDate?.toIso8601String(),
+  'end_date': instance.endDate?.toIso8601String(),
   'year': instance.year,
 };
 
 Round _$RoundFromJson(Map<String, dynamic> json) =>
-    Round(number: (json['number'] as num).toInt());
+    Round(number: (json['number'] as num?)?.toInt());
 
 Map<String, dynamic> _$RoundToJson(Round instance) => <String, dynamic>{
   'number': instance.number,
 };
 
 Groups _$GroupsFromJson(Map<String, dynamic> json) =>
-    Groups(id: json['id'] as String, name: json['name'] as String);
+    Groups(id: json['id'] as String?, name: json['name'] as String?);
 
 Map<String, dynamic> _$GroupsToJson(Groups instance) => <String, dynamic>{
   'id': instance.id,
