@@ -101,26 +101,26 @@ Map<String, dynamic> _$CoverageToJson(Coverage instance) => <String, dynamic>{
 SportEventProperties _$SportEventPropertiesFromJson(
   Map<String, dynamic> json,
 ) => SportEventProperties(
-  lineups: json['lineups'] as bool,
-  formations: json['formations'] as bool,
-  venue: json['venue'] as bool,
-  extendedPlayByPlay: json['extended_play_by_play'] as bool,
-  extendedPlayerStats: json['extended_player_stats'] as bool,
-  extendedTeamStats: json['extended_team_stats'] as bool,
+  lineups: json['lineups'] as bool?,
+  formations: json['formations'] as bool?,
+  venue: json['venue'] as bool?,
+  extendedPlayByPlay: json['extended_play_by_play'] as bool?,
+  extendedPlayerStats: json['extended_player_stats'] as bool?,
+  extendedTeamStats: json['extended_team_stats'] as bool?,
   lineupsAvailability: json['lineups_availability'] as String?,
-  ballspotting: json['ballspotting'] as bool,
-  commentary: json['commentary'] as bool,
-  funFacts: json['fun_facts'] as bool,
-  goalScorers: json['goal_scorers'] as bool,
-  goalScorersLive: json['goal_scorers_live'] as bool,
+  ballspotting: json['ballspotting'] as bool?,
+  commentary: json['commentary'] as bool?,
+  funFacts: json['fun_facts'] as bool?,
+  goalScorers: json['goal_scorers'] as bool?,
+  goalScorersLive: json['goal_scorers_live'] as bool?,
   scores: json['scores'] as String?,
-  gameClock: json['game_clock'] as bool,
-  deeperPlayByPlay: json['deeper_play_by_play'] as bool,
-  deeperPlayerStats: json['deeper_player_stats'] as bool,
-  deeperTeamStats: json['deeper_team_stats'] as bool,
-  basicPlayByPlay: json['basic_play_by_play'] as bool,
-  basicPlayerStats: json['basic_player_stats'] as bool,
-  basicTeamStats: json['basic_team_stats'] as bool,
+  gameClock: json['game_clock'] as bool?,
+  deeperPlayByPlay: json['deeper_play_by_play'] as bool?,
+  deeperPlayerStats: json['deeper_player_stats'] as bool?,
+  deeperTeamStats: json['deeper_team_stats'] as bool?,
+  basicPlayByPlay: json['basic_play_by_play'] as bool?,
+  basicPlayerStats: json['basic_player_stats'] as bool?,
+  basicTeamStats: json['basic_team_stats'] as bool?,
 );
 
 Map<String, dynamic> _$SportEventPropertiesToJson(
@@ -154,9 +154,15 @@ SportEventConditions _$SportEventConditionsFromJson(
   referee: (json['referee'] as List<dynamic>?)
       ?.map((e) => Referee.fromJson(e as Map<String, dynamic>))
       .toList(),
-  weather: Weather.fromJson(json['weather'] as Map<String, dynamic>),
-  ground: Ground.fromJson(json['ground'] as Map<String, dynamic>),
-  lineups: Lineups.fromJson(json['lineups'] as Map<String, dynamic>),
+  weather: json['weather'] == null
+      ? null
+      : Weather.fromJson(json['weather'] as Map<String, dynamic>),
+  ground: json['ground'] == null
+      ? null
+      : Ground.fromJson(json['ground'] as Map<String, dynamic>),
+  lineups: json['lineups'] == null
+      ? null
+      : Lineups.fromJson(json['lineups'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$SportEventConditionsToJson(

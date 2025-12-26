@@ -1,13 +1,14 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:o2live/service/api/apimodels.dart';
+import 'package:collection/collection.dart';
 
 void main() async {
   print('Starting API Model Test...');
 
   final baseUrl = 'https://api.sportradar.com/soccer-extended/trial/v4/en';
-  final date = '2025-06-01';
-  final url = Uri.parse('$baseUrl/schedules/$date/schedules.json?limit=3');
+  final date = '2025-12-26';
+  final url = Uri.parse('$baseUrl/schedules/$date/schedules.json');
 
   print('Fetching data from: $url');
 
@@ -46,6 +47,27 @@ void main() async {
     print('hometeam: $hometeam');
     print('First Match ID: ${firstSchedule.sportEvent.id}');
     print('starttime: ${firstSchedule.sportEvent.startTime}');
+
+    final allTeams = modelData.schedules;
+
+    final listPriority = {'1', '7', '8', '16', '17', '34', '35', '44', '465'};
+
+    List<Schedules> fastSort(List<Schedules> original, Set<String> priority) {
+      var priorityItems = original.where((n) {
+        String id = n.sportEvent.sportEventContext!.competition!.id!;
+        return priority.contains(id);
+      }).toList();
+
+      var otherItems = original.where((n) {
+        String id = n.sportEvent.sportEventContext!.competition!.id!;
+        return !priority.contains(id);
+      }).toList();
+      return [...priorityItems, ...otherItems];
+    }
+
+    final newList = fastSort(allTeams, listPriority).map((e)=>e.sportEvent.sportEventContext?.competition?.id);
+    print('new list: $newList');
+    // print('New list IDs: ${newList.map((s) => s.sportEvent.sportEventContext?.competition?.id).toList()}');
   } catch (e, s) {
     print('Error parsing data: $e');
     print('Stack trace: $s');

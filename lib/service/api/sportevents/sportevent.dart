@@ -96,26 +96,26 @@ class Coverage {
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class SportEventProperties {
-  final bool lineups;
-  final bool formations;
-  final bool venue;
-  final bool extendedPlayByPlay;
-  final bool extendedPlayerStats;
-  final bool extendedTeamStats;
+  final bool? lineups;
+  final bool? formations;
+  final bool? venue;
+  final bool? extendedPlayByPlay;
+  final bool? extendedPlayerStats;
+  final bool? extendedTeamStats;
   final String? lineupsAvailability;
-  final bool ballspotting;
-  final bool commentary;
-  final bool funFacts;
-  final bool goalScorers;
-  final bool goalScorersLive;
+  final bool? ballspotting;
+  final bool? commentary;
+  final bool? funFacts;
+  final bool? goalScorers;
+  final bool? goalScorersLive;
   final String? scores;
-  final bool gameClock;
-  final bool deeperPlayByPlay;
-  final bool deeperPlayerStats;
-  final bool deeperTeamStats;
-  final bool basicPlayByPlay;
-  final bool basicPlayerStats;
-  final bool basicTeamStats;
+  final bool? gameClock;
+  final bool? deeperPlayByPlay;
+  final bool? deeperPlayerStats;
+  final bool? deeperTeamStats;
+  final bool? basicPlayByPlay;
+  final bool? basicPlayerStats;
+  final bool? basicTeamStats;
 
   SportEventProperties({
     required this.lineups,
@@ -148,9 +148,9 @@ class SportEventProperties {
 @JsonSerializable()
 class SportEventConditions {
   final List<Referee>? referee;
-  final Weather weather;
-  final Ground ground;
-  final Lineups lineups;
+  final Weather? weather;
+  final Ground? ground;
+  final Lineups? lineups;
 
   SportEventConditions({
     required this.referee,
