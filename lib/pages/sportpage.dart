@@ -218,32 +218,18 @@ class _SportPageState extends ConsumerState<SportPage> {
                                 ),
                               ],
                             ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            child: Stack(
                               children: [
-                                IconButton.filled(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.mail),
-                                  iconSize: 16,
-                                  color: Colors.white,
-                                  style: IconButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 3,
-                                  ),
-                                ),
-                                const SizedBox(width: 8),
                                 Consumer(
                                   builder: (context, ref, child) {
                                     final selectedIndex = ref.watch(
                                       generalStatesProvider,
                                     );
-
                                     return Expanded(
                                       child: ListView.builder(
                                         controller: dateListScroll,
                                         scrollDirection: Axis.horizontal,
-                                        itemCount: 8,
+                                        itemCount: 7,
                                         itemBuilder: (context, index) =>
                                             Padding(
                                               padding:
@@ -257,7 +243,8 @@ class _SportPageState extends ConsumerState<SportPage> {
                                                 index: index,
                                                 onTap: () {
                                                   setState(() {
-                                                    offsetNumber = index
+                                                    offsetNumber = selectedIndex
+                                                        .selectedIndex
                                                         .toDouble();
                                                   });
                                                   ref
@@ -273,20 +260,8 @@ class _SportPageState extends ConsumerState<SportPage> {
                                     );
                                   },
                                 ),
-                                const SizedBox(width: 8),
-                                IconButton.filled(
-                                  onPressed: () {
-                                    showPicker();
-                                  },
-                                  icon: const Icon(
-                                    Icons.calendar_month_rounded,
-                                  ),
-                                  style: IconButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 10,
-                                  ),
-                                  iconSize: 16,
-                                  color: Colors.white,
+                                Positioned.fill(
+                                  child: Container(decoration: BoxDecoration()),
                                 ),
                               ],
                             ),

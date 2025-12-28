@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:o2live/extensions/extension.dart';
@@ -81,7 +80,11 @@ class GameTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(18),
         color: Colors.white,
         boxShadow: [
-          const BoxShadow(spreadRadius: .05, blurRadius: 15, color: Colors.black12),
+          const BoxShadow(
+            spreadRadius: .05,
+            blurRadius: 15,
+            color: Colors.black12,
+          ),
         ],
       ),
       child: ListTile(
@@ -231,7 +234,7 @@ class DateTile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: index == selectedIndex ? Colors.grey : Colors.white,
+          color: index == selectedIndex ? Colors.grey.shade200 : Colors.white,
           borderRadius: index == selectedIndex
               ? BorderRadius.circular(12)
               : BorderRadius.circular(0),
