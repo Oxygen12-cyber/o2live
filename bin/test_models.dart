@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:o2live/service/api/apimodels.dart';
-import 'package:collection/collection.dart';
 
 void main() async {
   print('Starting API Model Test...');
@@ -42,31 +41,63 @@ void main() async {
     print('Number of schedules: ${modelData.schedules.length}');
 
     final firstSchedule = modelData.schedules.first;
-    final hometeam = firstSchedule.sportEvent.competitors![0].name;
+    final hometeam = firstSchedule.sportEvent.competitors![0].id;
 
     print('hometeam: $hometeam');
     print('First Match ID: ${firstSchedule.sportEvent.id}');
     print('starttime: ${firstSchedule.sportEvent.startTime}');
 
-    final allTeams = modelData.schedules;
+    final List<Schedules> allTeams = modelData.schedules;
 
-    final listPriority = {'1', '7', '8', '16', '17', '34', '35', '44', '465'};
+    final Set<String> listPriority = {
+      'sr:competition:44',
+      'sr:competition:16',
+      'sr:competition:8',
+      'sr:competition:34',
+      'sr:competition:35',
+      'sr:competition:17',
+      'sr:competition:7',
+      'sr:competition:1',
+      'sr:competition:465',
+      'sr:competition:18',
+      'sr:competition:54',
+      'sr:competition:11',
+      'sr:competition:270',
+      
+    };
 
-    List<Schedules> fastSort(List<Schedules> original, Set<String> priority) {
-      var priorityItems = original.where((n) {
-        String id = n.sportEvent.sportEventContext!.competition!.id!;
-        return priority.contains(id);
-      }).toList();
+    final List<Schedules> priorityList = allTeams.where((x) {
+      String? competitionId = x.sportEvent.sportEventContext?.competition?.id;
+      return listPriority.contains(competitionId);
+    }).toList();
 
-      var otherItems = original.where((n) {
-        String id = n.sportEvent.sportEventContext!.competition!.id!;
-        return !priority.contains(id);
-      }).toList();
-      return [...priorityItems, ...otherItems];
-    }
+    final List<Schedules> otherList = allTeams.where((x) {
+      String? competitionId = x.sportEvent.sportEventContext?.competition?.id;
+      return !listPriority.contains(competitionId);
+    }).toList();
 
-    final newList = fastSort(allTeams, listPriority).map((e)=>e.sportEvent.sportEventContext?.competition?.id);
-    print('new list: $newList');
+    // final allTeamIds = modelData.schedules
+    //     .map((e) => e.sportEvent.sportEventContext?.competition?.id)
+    //     .toSet();
+    // final allleagues = modelData.schedules
+    //     .map((e) => e.sportEvent.sportEventContext?.competition?.name)
+    //     .toSet();
+
+    final Set<String?> homeTeams = priorityList
+        .map((e) => e.sportEvent.sportEventContext?.competition?.name)
+        .toSet();
+
+    final Set<String?> homeTeam = otherList
+        .map((e) => e.sportEvent.sportEventContext?.competition?.name)
+        .toSet();
+
+    print('priorityList: $homeTeams\n\n\n');
+    print('otherList: $homeTeam');
+    // print('allteams: $allleagues');
+
+    // print('otherList: $OtherList');
+
+    // print('new list: $newList');
     // print('New list IDs: ${newList.map((s) => s.sportEvent.sportEventContext?.competition?.id).toList()}');
   } catch (e, s) {
     print('Error parsing data: $e');
