@@ -214,6 +214,7 @@ class PageTest extends StatelessWidget {
 }
 
 class DateTile extends StatelessWidget {
+  final String date;
   final int selectedIndex;
   final int index;
   final Function()? onTap;
@@ -222,6 +223,7 @@ class DateTile extends StatelessWidget {
     required this.selectedIndex,
     required this.index,
     this.onTap,
+    required this.date,
   });
 
   @override
@@ -229,7 +231,7 @@ class DateTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 40,
+        width: 60,
         height: 40,
         padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
         alignment: Alignment.center,
@@ -239,16 +241,173 @@ class DateTile extends StatelessWidget {
               ? BorderRadius.circular(12)
               : BorderRadius.circular(0),
         ),
-        child: const Text(
-          "Fri 13 \n May",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black54,
-            fontSize: 10,
-            fontWeight: FontWeight.bold,
-          ),
+
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              date,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(
+                color: Colors.black54,
+                fontSize: 11,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const Text(
+              "13th May",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black54,
+                fontSize: 10,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
       ),
+    );
+  }
+}
+
+class TeamDash extends StatelessWidget {
+  final String? leagueName;
+  final String? leagueShort;
+  final String homeTeam;
+  final String awayTeam;
+  final String homeScore;
+  final String awayScore;
+  final String? homeImage;
+  final String? awayImage;
+  final String? leagueImage;
+  const TeamDash({
+    super.key,
+    this.leagueName,
+    required this.homeTeam,
+    required this.awayTeam,
+    required this.homeScore,
+    required this.awayScore,
+    this.homeImage,
+    this.awayImage,
+    this.leagueImage,
+    this.leagueShort,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.hardEdge,
+      fit: StackFit.loose,
+      children: [
+        Container(
+          width: context.wp(90),
+          height: context.hp(30),
+          decoration: BoxDecoration(
+            color: Colors.purple,
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Image.asset(
+            leagueImage ?? 'assets/images/premierleague.png',
+            color: Colors.black12,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Container(
+          width: context.wp(90),
+          height: context.hp(30),
+          color: Colors.transparent,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '$leagueName \n $leagueShort',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.ubuntuSans(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(height: context.hp(8)),
+              Row(
+                // spacing: ,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 32,
+                    foregroundImage: AssetImage(
+                      homeImage ?? 'assets/images/manulogo.png',
+                    ),
+                  ),
+                  SizedBox(width: context.hp(2)),
+
+                  Text(
+                    homeScore,
+                    style: GoogleFonts.ubuntuSans(
+                      fontSize: 38,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(width: context.hp(2)),
+                  Text(
+                    ':',
+                    style: GoogleFonts.ubuntuSans(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(width: context.hp(2)),
+                  Text(
+                    awayScore,
+                    style: GoogleFonts.ubuntuSans(
+                      fontSize: 38,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(width: context.hp(2)),
+                  CircleAvatar(
+                    radius: 32,
+                    backgroundImage: AssetImage(
+                      awayImage ?? 'assets/images/chelsealogo.png',
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 5),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      homeTeam,
+                      style: GoogleFonts.ubuntuSans(
+                        fontSize: homeTeam.length > 7 ? 14 : 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      awayTeam,
+                      style: GoogleFonts.ubuntuSans(
+                        fontSize: awayTeam.length > 7 ? 14 : 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: context.hp(2)),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

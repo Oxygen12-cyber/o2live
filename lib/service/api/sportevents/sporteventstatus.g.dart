@@ -8,8 +8,8 @@ part of 'sporteventstatus.dart';
 
 SportEventStatus _$SportEventStatusFromJson(Map<String, dynamic> json) =>
     SportEventStatus(
-      status: json['status'] as String,
-      matchStatus: json['match_status'] as String,
+      status: json['status'] as String?,
+      matchStatus: json['match_status'] as String?,
       homeScore: (json['home_score'] as num?)?.toInt(),
       awayScore: (json['away_score'] as num?)?.toInt(),
       periodScores: (json['period_scores'] as List<dynamic>?)

@@ -13,7 +13,7 @@ final dio = Dio(
 
 final date = '2025-12-26';
 
-Future<SportRadar> fetchDailySchedules() async {
+Future<SportRadar> fetchDailySchedules(date) async {
   print('trying to call api.....');
   final response = await dio.get('/schedules/$date/schedules.json');
   print('called api');

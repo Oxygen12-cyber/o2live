@@ -5,8 +5,8 @@ part 'sporteventstatus.g.dart';
 // Main Class
 @JsonSerializable(fieldRename: FieldRename.snake)
 class SportEventStatus {
-  final String status;
-  final String matchStatus;
+  final String? status;
+  final String? matchStatus;
   final int? homeScore;
   final int? awayScore;
   final List<PeriodScores>? periodScores;

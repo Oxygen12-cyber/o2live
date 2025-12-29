@@ -168,3 +168,19 @@ final List<Match> mockMatches = [
     iconData: Icons.person,
   ),
 ];
+
+final Set<String> leaguePriority = {
+  'sr:competition:44',
+  'sr:competition:16',
+  'sr:competition:8',
+  'sr:competition:34',
+  'sr:competition:35',
+  'sr:competition:17',
+  'sr:competition:7',
+  'sr:competition:1',
+  'sr:competition:465',
+  'sr:competition:18',
+  'sr:competition:54',
+  'sr:competition:11',
+  'sr:competition:270',
+};

@@ -21,15 +21,19 @@ class _SportPageState extends ConsumerState<SportPage> {
   double offsetNumber = 0;
   int number_of_dates = 8;
   // List<Data> myList = [];
-  late final ScrollController dateListScroll;
+  final ScrollController dateListScroll = ScrollController();
 
   @override
   void initState() {
     // distributeData();
-    dateListScroll = ScrollController(
-      initialScrollOffset: number_of_dates / 2,
-      keepScrollOffset: true,
-    );
+    dateListScroll.addListener(() {
+      final double currentOffset = dateListScroll.offset;
+      debugPrint('currentoffset: $currentOffset');
+      if (currentOffset > 0.0) {
+        dateListScroll.jumpTo(currentOffset);
+      }
+    });
+
     super.initState();
   }
 
@@ -45,10 +49,10 @@ class _SportPageState extends ConsumerState<SportPage> {
         displacement: 80,
         strokeWidth: 2,
         elevation: 4,
-        onRefresh: () {
+        onRefresh: ()async {
           debugPrint('refreshed');
-          Future.delayed(const Duration(seconds: 1));
-          return ref.refresh(sportRadarProvider.future);
+          await Future.delayed(const Duration(seconds: 1));
+          return ref.invalidate(sportRadarProvider);
         },
         child: ScrollConfiguration(
           behavior: ScrollConfiguration.of(
@@ -58,7 +62,7 @@ class _SportPageState extends ConsumerState<SportPage> {
             builder: (context, ref, child) {
               return data.when(
                 data: (sportradar) {
-                  final List<Schedules> games = sportradar.schedules;
+                  final List<Schedules> games = sportradar;
                   int leng = games.length;
                   debugPrint('$leng');
 
@@ -210,6 +214,7 @@ class _SportPageState extends ConsumerState<SportPage> {
                             padding: const EdgeInsets.symmetric(horizontal: 16),
                             decoration: const BoxDecoration(
                               color: Colors.white,
+
                               boxShadow: [
                                 BoxShadow(
                                   spreadRadius: .05,
@@ -218,8 +223,10 @@ class _SportPageState extends ConsumerState<SportPage> {
                                 ),
                               ],
                             ),
-                            child: Stack(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                SizedBox(width: context.hp(1)),
                                 Consumer(
                                   builder: (context, ref, child) {
                                     final selectedIndex = ref.watch(
@@ -230,14 +237,16 @@ class _SportPageState extends ConsumerState<SportPage> {
                                         controller: dateListScroll,
                                         scrollDirection: Axis.horizontal,
                                         itemCount: 7,
-                                        itemBuilder: (context, index) =>
-                                            Padding(
+                                        itemBuilder: (context, index){
+                                          final List<String> dates = ['MON', 'TUE', 'WED', 'THUR', 'FRI', 'SAT', 'SUN'];
+                                          return Padding(
                                               padding:
                                                   const EdgeInsets.symmetric(
                                                     // horizontal: 3,
                                                     vertical: 15,
                                                   ),
                                               child: DateTile(
+                                                date: dates[index],
                                                 selectedIndex:
                                                     selectedIndex.selectedIndex,
                                                 index: index,
@@ -247,6 +256,7 @@ class _SportPageState extends ConsumerState<SportPage> {
                                                         .selectedIndex
                                                         .toDouble();
                                                   });
+                                                  dateListScroll.jumpTo((selectedIndex.selectedIndex/7)*120, );
                                                   ref
                                                       .read(
                                                         generalStatesProvider
@@ -255,14 +265,12 @@ class _SportPageState extends ConsumerState<SportPage> {
                                                       .addIndex(index);
                                                 },
                                               ),
-                                            ),
+                                            );}
                                       ),
                                     );
                                   },
                                 ),
-                                Positioned.fill(
-                                  child: Container(decoration: BoxDecoration()),
-                                ),
+                                SizedBox(width: context.hp(1)),
                               ],
                             ),
                           ),
