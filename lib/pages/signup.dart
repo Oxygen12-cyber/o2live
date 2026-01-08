@@ -21,7 +21,7 @@ class _LoginPageState extends State<SignUp> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.lightGreen.shade700,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
@@ -52,7 +52,10 @@ class _LoginPageState extends State<SignUp> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Colors.white.withAlpha(120), Colors.green.shade100],
+                  colors: [
+                    Colors.white.withAlpha(20),
+                    Colors.lightGreen.shade200,
+                  ],
                 ),
               ),
             ),
@@ -86,7 +89,7 @@ class _LoginPageState extends State<SignUp> {
                     'Live Action, Instantly!',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                      color: Colors.black45,
+                      color: Colors.black54,
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
                     ),
@@ -107,15 +110,19 @@ class _LoginPageState extends State<SignUp> {
                         ),
                         backgroundColor: const Color(0xff7d34eb),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Text(
                           'Sign up with email',
-                          style: TextStyle(color: Colors.white, fontSize: 19),
+                          style: GoogleFonts.ubuntuSans(
+                            color: Colors.white,
+                            fontSize: 19,
+                          ),
                         ),
                       ),
                     ),
                   ),
                   SizedBox(height: context.hp(1.5)),
+                  
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),

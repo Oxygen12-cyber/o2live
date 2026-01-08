@@ -59,7 +59,7 @@ class GetStarted extends StatelessWidget {
                     },
 
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 30,
                         vertical: 24,
                       ),

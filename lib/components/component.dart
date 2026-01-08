@@ -215,6 +215,7 @@ class PageTest extends StatelessWidget {
 
 class DateTile extends StatelessWidget {
   final String date;
+  final String? date2;
   final int selectedIndex;
   final int index;
   final Function()? onTap;
@@ -224,6 +225,7 @@ class DateTile extends StatelessWidget {
     required this.index,
     this.onTap,
     required this.date,
+    this.date2,
   });
 
   @override
@@ -247,20 +249,22 @@ class DateTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              date,
+              date.toUpperCase(),
               textAlign: TextAlign.center,
+
               style: GoogleFonts.poppins(
                 color: Colors.black54,
-                fontSize: 11,
+                fontSize: 12,
+
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Text(
-              "13th May",
+            Text(
+              date2 ?? "13th May",
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black54,
-                fontSize: 10,
+                fontSize: 11,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -335,23 +339,30 @@ class TeamDash extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                    radius: 32,
-                    foregroundImage: AssetImage(
-                      homeImage ?? 'assets/images/manulogo.png',
+                  Expanded(
+                    flex: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircleAvatar(
+                          radius: 32,
+                          foregroundImage: AssetImage(
+                            homeImage ?? 'assets/images/manulogo.png',
+                          ),
+                        ),
+                        SizedBox(width: context.hp(2)),
+                        Text(
+                          homeScore,
+                          style: GoogleFonts.ubuntuSans(
+                            fontSize: 38,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(width: context.hp(2)),
+                      ],
                     ),
                   ),
-                  SizedBox(width: context.hp(2)),
-
-                  Text(
-                    homeScore,
-                    style: GoogleFonts.ubuntuSans(
-                      fontSize: 38,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(width: context.hp(2)),
                   Text(
                     ':',
                     style: GoogleFonts.ubuntuSans(
@@ -360,27 +371,35 @@ class TeamDash extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(width: context.hp(2)),
-                  Text(
-                    awayScore,
-                    style: GoogleFonts.ubuntuSans(
-                      fontSize: 38,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(width: context.hp(2)),
-                  CircleAvatar(
-                    radius: 32,
-                    backgroundImage: AssetImage(
-                      awayImage ?? 'assets/images/chelsealogo.png',
+                  Expanded(
+                    flex: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(width: context.hp(2)),
+                        Text(
+                          awayScore,
+                          style: GoogleFonts.ubuntuSans(
+                            fontSize: 38,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(width: context.hp(2)),
+                        CircleAvatar(
+                          radius: 32,
+                          backgroundImage: AssetImage(
+                            awayImage ?? 'assets/images/chelsealogo.png',
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 5),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

@@ -6,9 +6,12 @@ import 'package:o2live/service/apicall.dart';
 import 'package:riverpod/riverpod.dart';
 
 class SportRadarObj extends AsyncNotifier<List<Schedules>> {
+  final String date;
+  SportRadarObj(this.date);
+
   @override
   FutureOr<List<Schedules>> build() async {
-    final dailySchedules = await fetchDailySchedules('2025-12-29');
+    final dailySchedules = await fetchDailySchedules(date);
     final value = dailySchedules.schedules;
 
     final List<Schedules> priorityList = value.where((x) {
@@ -25,5 +28,5 @@ class SportRadarObj extends AsyncNotifier<List<Schedules>> {
   }
 }
 
-final sportRadarProvider =
-    AsyncNotifierProvider<SportRadarObj, List<Schedules>>(SportRadarObj.new);
+final sportRadarProvider = AsyncNotifierProvider.autoDispose
+    .family<SportRadarObj, List<Schedules>, String>(SportRadarObj.new);

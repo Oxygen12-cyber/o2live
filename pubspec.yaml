@@ -48,7 +48,7 @@ dependencies:
   json_annotation: ^4.9.0
   redis: ^4.0.0
   dio: ^5.9.0
-  
+  rive: 
 
 dev_dependencies:
   flutter_test:
