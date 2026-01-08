@@ -8,7 +8,13 @@ import 'package:o2live/pages/semmarytabpage.dart';
 
 class Sportinfopage extends StatefulWidget {
   final String sportsdata;
-  const Sportinfopage({super.key, required this.sportsdata});
+  final String leagueName;
+  final String? leagueShort;
+  final String homeTeam;
+  final String awayTeam;
+  final String? homeScore;
+  final String? awayScore;
+  const Sportinfopage({super.key, required this.sportsdata, required this.leagueName, this.leagueShort, required this.homeTeam, required this.awayTeam, this.homeScore, this.awayScore});
 
   @override
   State<Sportinfopage> createState() => _SportinfopageState();
@@ -40,13 +46,13 @@ class _SportinfopageState extends State<Sportinfopage>
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const TeamDash(
-              leagueName: 'Premier League',
+             TeamDash(
+              leagueName: widget.leagueName,
               leagueShort: 'EPL',
-              homeTeam: 'Manchester United',
-              awayTeam: 'Chelsea FC',
-              homeScore: '4',
-              awayScore: '1',
+              homeTeam: widget.homeTeam,
+              awayTeam: widget.awayTeam ,
+              homeScore: widget.homeScore ?? '',
+              awayScore: widget.awayScore ?? '',
             ),
             Padding(
               padding: const EdgeInsets.symmetric(

@@ -169,7 +169,7 @@ class GameTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  homeScores ?? '0',
+                  homeScores ?? '',
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 16,
@@ -177,7 +177,7 @@ class GameTile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  awayScores ?? '0',
+                  awayScores ?? '',
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 16,

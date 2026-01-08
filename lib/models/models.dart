@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 final List<Color> colors = [
   Colors.pink,
@@ -184,3 +185,59 @@ final Set<String> leaguePriority = {
   'sr:competition:11',
   'sr:competition:270',
 };
+
+// Map<String, dynamic> fixtureHelper(String startTime){
+//   final parsedDate = DateTime.parse(startTime).toLocal();
+//   final gametimeHr = parsedDate.hour;
+
+//   //current time
+//   final currentTimeHr = DateTime.now().hour;
+  
+//   //converter
+//   final converter = DateFormat('HH:mm').format(parsedDate);
+
+//   //functions
+//   if (currentTimeHr == gametimeHr){
+//     return {'isLive':true, 'gameTime':converter, 'status':'Live'};
+//   } else if (currentTimeHr > gametimeHr){
+//     return {'isLive':false, 'gameTime':converter, 'status':'FT'};
+//   } else if (currentTimeHr < gametimeHr){
+//     return {'isLive':false, 'gameTime':converter, 'status':''};
+//   }
+
+  
+// }
+
+Map<String, dynamic> fixtureHelper(String startTime) {
+  final parsedDate = DateTime.parse(startTime).toLocal();
+  final now = DateTime.now();
+  
+  // Format the time (e.g., 15:30)
+  final String formattedTime = DateFormat('HH:mm').format(parsedDate);
+
+  // Define game duration (usually 90 mins + 15 min half time + stoppage = ~115 mins)
+  final gameEndTime = parsedDate.add(const Duration(minutes: 115));
+
+  if (now.isAfter(parsedDate) && now.isBefore(gameEndTime)) {
+    // Current time is between kickoff and roughly the end of the match
+    return {
+      'isLive': true, 
+      'gameTime': formattedTime, 
+      'status': 'Live'
+    };
+  } else if (now.isAfter(gameEndTime)) {
+    // Current time is past the estimated end time
+    return {
+      'isLive': false, 
+      'gameTime': formattedTime, 
+      'status': 'FT'
+    };
+  } else {
+    // Match hasn't started yet
+    return {
+      'isLive': false, 
+      'gameTime': formattedTime, 
+      'status': 'NS' // NS is often used for "Not Started"
+    };
+  }
+}

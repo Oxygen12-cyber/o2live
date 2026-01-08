@@ -334,6 +334,10 @@ class SliverListBox extends ConsumerWidget {
               return const CircularProgressIndicator();
             }
             final schedu = games[index];
+
+            final gameStartTime = schedu.sportEvent.startTime.toString();
+            final parseGameTime = fixtureHelper(gameStartTime);
+
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 5),
               child: GameTile(
@@ -344,24 +348,33 @@ class SliverListBox extends ConsumerWidget {
                       builder: (context) => Sportinfopage(
                         sportsdata:
                             mockMatches[index % mockMatches.length].homeTeam,
+                        leagueName:
+                            schedu
+                                .sportEvent
+                                .sportEventContext!
+                                .competition!
+                                .name ??
+                            'Oxygen League',
+                        homeTeam:
+                            schedu.sportEvent.competitors?[0].name ??
+                            'Team One',
+                        awayTeam:
+                            schedu.sportEvent.competitors?[1].name ??
+                            'Team Two',
                       ),
                     ),
                   );
                 },
                 icondata: Icons.person,
-                gametime: mockMatches[index % mockMatches.length].gameTime,
-                isLive: mockMatches[index % mockMatches.length].isLive,
+                // gametime: mockMatches[index % mockMatches.length].gameTime,
+                gametime: parseGameTime['gameTime'],
+
+                isLive: parseGameTime['isLive'],
                 isFavorite: mockMatches[index % mockMatches.length].isFavorite,
-                homeTeam:
-                    schedu.sportEvent.competitors?[0].name ??
-                    mockMatches[index % mockMatches.length].homeTeam,
-                awayTeam:
-                    schedu.sportEvent.competitors?[1].name ??
-                    mockMatches[index % mockMatches.length].awayTeam,
-                homeScores: mockMatches[index % mockMatches.length].homeScore
-                    .toString(),
-                awayScores: mockMatches[index % mockMatches.length].awayScore
-                    .toString(),
+                homeTeam: schedu.sportEvent.competitors?[0].name ?? 'home',
+                awayTeam: schedu.sportEvent.competitors?[1].name ?? 'away',
+                homeScores: schedu.sportEventStatus.homeScore.toString(),
+                awayScores: schedu.sportEventStatus.awayScore.toString(),
               ),
             );
           },
