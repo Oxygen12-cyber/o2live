@@ -87,7 +87,7 @@ void main() {
     print('JSON decoded successfully.');
 
     print('Parsing into SportRadar model...');
-    final modelData = SportRadar.fromJson(jsonResponse);
+    final modelData = DailySchedules.fromJson(jsonResponse);
 
     print('Successfully parsed root model.');
     print('Generated Time: ${modelData.generatedTime}');

@@ -5,18 +5,15 @@ import 'package:o2live/service/api/dailysummaries/statistic.dart';
 
 part 'dailysummary.g.dart';
 
+
 @JsonSerializable(fieldRename: FieldRename.snake)
 class Summaries {
   final SportEvent sportEvent;
   final SportEventStatus sportEventStatus;
-  final Statistic? statistics;
+  final Statistic statistics;
 
-  Summaries({
-    required this.sportEvent,
-    required this.sportEventStatus,
-    this.statistics,
-  });
-  factory Summaries.fromJson(Map<String, dynamic> json) =>
+  Summaries({required this.sportEvent, required this.sportEventStatus, required this.statistics});
+   factory Summaries.fromJson(Map<String, dynamic> json) =>
       _$SummariesFromJson(json);
 }
 

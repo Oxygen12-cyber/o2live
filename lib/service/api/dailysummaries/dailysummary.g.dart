@@ -11,9 +11,7 @@ Summaries _$SummariesFromJson(Map<String, dynamic> json) => Summaries(
   sportEventStatus: SportEventStatus.fromJson(
     json['sport_event_status'] as Map<String, dynamic>,
   ),
-  statistics: json['statistics'] == null
-      ? null
-      : Statistic.fromJson(json['statistics'] as Map<String, dynamic>),
+  statistics: Statistic.fromJson(json['statistics'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$SummariesToJson(Summaries instance) => <String, dynamic>{
