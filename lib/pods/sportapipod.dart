@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:o2live/models/models.dart';
-import 'package:o2live/service/api/apimodels.dart';
+import 'package:o2live/service/api/dailyschedules/dailyschedule.dart';
 import 'package:o2live/service/apicall.dart';
 import 'package:riverpod/riverpod.dart';
 

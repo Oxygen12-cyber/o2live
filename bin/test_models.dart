@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:o2live/service/api/apimodels.dart';
+import 'package:o2live/service/api/dailyschedules/dailyschedule.dart';
 
 void main() async {
   print('Starting API Model Test...');
@@ -34,7 +34,7 @@ void main() async {
     }
 
     print('parsing data into models');
-    final modelData = SportRadar.fromJson(jsonResponse);
+    final modelData = DailySchedules.fromJson(jsonResponse);
 
     print('Successfully parsed root model.');
     print('Generated Time: ${modelData.generatedTime}');
@@ -63,7 +63,6 @@ void main() async {
       'sr:competition:54',
       'sr:competition:11',
       'sr:competition:270',
-      
     };
 
     final List<Schedules> priorityList = allTeams.where((x) {
@@ -76,13 +75,6 @@ void main() async {
       return !listPriority.contains(competitionId);
     }).toList();
 
-    // final allTeamIds = modelData.schedules
-    //     .map((e) => e.sportEvent.sportEventContext?.competition?.id)
-    //     .toSet();
-    // final allleagues = modelData.schedules
-    //     .map((e) => e.sportEvent.sportEventContext?.competition?.name)
-    //     .toSet();
-
     final Set<String?> homeTeams = priorityList
         .map((e) => e.sportEvent.sportEventContext?.competition?.name)
         .toSet();
@@ -93,12 +85,6 @@ void main() async {
 
     print('priorityList: $homeTeams\n\n\n');
     print('otherList: $homeTeam');
-    // print('allteams: $allleagues');
-
-    // print('otherList: $OtherList');
-
-    // print('new list: $newList');
-    // print('New list IDs: ${newList.map((s) => s.sportEvent.sportEventContext?.competition?.id).toList()}');
   } catch (e, s) {
     print('Error parsing data: $e');
     print('Stack trace: $s');

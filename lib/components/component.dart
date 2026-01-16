@@ -398,29 +398,36 @@ class TeamDash extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 5),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      homeTeam,
-                      style: GoogleFonts.ubuntuSans(
-                        fontSize: homeTeam.length > 7 ? 14 : 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Center(
+                      child: Text(
+                        homeTeam,
+                        style: GoogleFonts.ubuntuSans(
+                          fontSize: homeTeam.length > 7 ? 14 : 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    Text(
-                      awayTeam,
-                      style: GoogleFonts.ubuntuSans(
-                        fontSize: awayTeam.length > 7 ? 14 : 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Center(
+                      child: Text(
+                        awayTeam,
+                        style: GoogleFonts.ubuntuSans(
+                          fontSize: awayTeam.length > 7 ? 14 : 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               SizedBox(height: context.hp(2)),
             ],

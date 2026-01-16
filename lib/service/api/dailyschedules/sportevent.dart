@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:o2live/service/api/sportevents/sporteventcontext.dart';
+import 'package:o2live/service/api/dailyschedules/sporteventcontext.dart';
 
 part 'sportevent.g.dart';
 

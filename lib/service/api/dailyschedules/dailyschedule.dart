@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:o2live/service/api/sportevents/sportevent.dart';
-import 'package:o2live/service/api/sportevents/sporteventstatus.dart';
+import 'package:o2live/service/api/dailyschedules/sportevent.dart';
+import 'package:o2live/service/api/dailyschedules/sporteventstatus.dart';
 
-part 'apimodels.g.dart';
+part 'dailyschedule.g.dart';
 
 // Big classes
 @JsonSerializable(fieldRename: FieldRename.snake)
@@ -17,14 +17,14 @@ class Schedules {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class SportRadar {
+class DailySchedules {
   @JsonKey(name: 'generated_at')
   final DateTime generatedTime;
   
   final List<Schedules> schedules;
 
-  SportRadar({required this.generatedTime, required this.schedules});
+  DailySchedules({required this.generatedTime, required this.schedules});
 
-  factory SportRadar.fromJson(Map<String, dynamic> json) =>
-      _$SportRadarFromJson(json);
+  factory DailySchedules.fromJson(Map<String, dynamic> json) =>
+      _$DailySchedulesFromJson(json);
 }

@@ -1,13 +1,12 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:o2live/components/component.dart';
 import 'package:o2live/pages/aitabpage.dart';
 import 'package:o2live/pages/detailstabpage.dart';
-import 'package:o2live/pages/semmarytabpage.dart';
+import 'package:o2live/pages/summarytabpage.dart';
 
 class Sportinfopage extends StatefulWidget {
-  final String sportsdata;
+  final dynamic sportsdata;
   final String leagueName;
   final String? leagueShort;
   final String homeTeam;
@@ -48,7 +47,7 @@ class _SportinfopageState extends State<Sportinfopage>
           children: [
              TeamDash(
               leagueName: widget.leagueName,
-              leagueShort: 'EPL',
+              leagueShort: widget.leagueShort,
               homeTeam: widget.homeTeam,
               awayTeam: widget.awayTeam ,
               homeScore: widget.homeScore ?? '',
@@ -79,14 +78,14 @@ class _SportinfopageState extends State<Sportinfopage>
                   fontWeight: FontWeight.w600,
                 ),
                 labelColor: Colors.deepPurple,
-                overlayColor: WidgetStatePropertyAll(Colors.transparent),
-                tabs: [Text('Details'), Text('Ai Insights'), Text('Summary')],
+                overlayColor: const WidgetStatePropertyAll(Colors.transparent),
+                tabs: [const Text('Details'), const Text('Ai Insights'), const Text('Summary')],
               ),
             ),
             Expanded(
               child: TabBarView(
                 controller: tabController,
-                children: [DetailsTab(), AiTab(), SummaryTab()],
+                children: [const DetailsTab(), const AiTab(), const SummaryTab()],
               ),
             ),
           ],

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,8 +11,7 @@ import 'package:o2live/pages/sportinfopage.dart';
 import 'package:o2live/pods/datetimepod.dart';
 import 'package:o2live/pods/providers.dart';
 import 'package:o2live/pods/sportapipod.dart';
-import 'package:o2live/service/api/apimodels.dart';
-import 'package:rive/rive.dart' as rive;
+import 'package:o2live/service/api/dailyschedules/dailyschedule.dart';
 
 String currentSelectedDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
@@ -267,20 +264,11 @@ class _SportPageState extends ConsumerState<SportPage> {
                   ),
                 ),
               ),
-              SliverListBox(),
+              const SliverListBox(),
             ],
           ),
         ),
       ),
-    );
-  }
-
-  Future showPicker() async {
-    return showDatePicker(
-      context: context,
-      currentDate: DateTime.now(),
-      firstDate: DateTime(2025, 12, 1),
-      lastDate: DateTime(2025, 12, 31),
     );
   }
 }
@@ -347,7 +335,7 @@ class SliverListBox extends ConsumerWidget {
                     MaterialPageRoute(
                       builder: (context) => Sportinfopage(
                         sportsdata:
-                            mockMatches[index % mockMatches.length].homeTeam,
+                            schedu,
                         leagueName:
                             schedu
                                 .sportEvent
@@ -366,9 +354,7 @@ class SliverListBox extends ConsumerWidget {
                   );
                 },
                 icondata: Icons.person,
-                // gametime: mockMatches[index % mockMatches.length].gameTime,
                 gametime: parseGameTime['gameTime'],
-
                 isLive: parseGameTime['isLive'],
                 isFavorite: mockMatches[index % mockMatches.length].isFavorite,
                 homeTeam: schedu.sportEvent.competitors?[0].name ?? 'home',

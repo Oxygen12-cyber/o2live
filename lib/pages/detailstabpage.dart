@@ -6,6 +6,6 @@ class DetailsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Center(child: Text('details page'),),);
+    return Container(child: const Center(child: Text('details page'),),);
   }
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'apimodels.dart';
+part of 'dailyschedule.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -18,14 +18,15 @@ Map<String, dynamic> _$SchedulesToJson(Schedules instance) => <String, dynamic>{
   'sport_event_status': instance.sportEventStatus,
 };
 
-SportRadar _$SportRadarFromJson(Map<String, dynamic> json) => SportRadar(
-  generatedTime: DateTime.parse(json['generated_at'] as String),
-  schedules: (json['schedules'] as List<dynamic>)
-      .map((e) => Schedules.fromJson(e as Map<String, dynamic>))
-      .toList(),
-);
+DailySchedules _$DailySchedulesFromJson(Map<String, dynamic> json) =>
+    DailySchedules(
+      generatedTime: DateTime.parse(json['generated_at'] as String),
+      schedules: (json['schedules'] as List<dynamic>)
+          .map((e) => Schedules.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
-Map<String, dynamic> _$SportRadarToJson(SportRadar instance) =>
+Map<String, dynamic> _$DailySchedulesToJson(DailySchedules instance) =>
     <String, dynamic>{
       'generated_at': instance.generatedTime.toIso8601String(),
       'schedules': instance.schedules,

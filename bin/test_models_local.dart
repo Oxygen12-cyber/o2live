@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:o2live/service/api/apimodels.dart';
+import 'package:o2live/service/api/dailyschedules/dailyschedule.dart';
 
 void main() {
   print('Starting Local API Model Test...');
