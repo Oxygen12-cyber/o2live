@@ -1,0 +1,675 @@
+{
+  "generated_at": "2026-01-17T02:52:46+00:00",
+  "schedules": [
+    {
+      "sport_event": {
+        "id": "sr:sport_event:66919370",
+        "start_time": "2026-01-17T01:00:00+00:00",
+        "start_time_confirmed": true,
+        "sport_event_context": {
+          "sport": {
+            "id": "sr:sport:1",
+            "name": "Soccer"
+          },
+          "category": {
+            "id": "sr:category:12",
+            "name": "Mexico",
+            "country_code": "MEX"
+          },
+          "competition": {
+            "id": "sr:competition:27384",
+            "name": "Liga de Expansion MX, Clausura",
+            "parent_id": "sr:competition:697",
+            "gender": "men"
+          },
+          "season": {
+            "id": "sr:season:138044",
+            "name": "Liga de Expansion MX, Clausura 2026",
+            "start_date": "2026-01-09",
+            "end_date": "2026-05-17",
+            "year": "2026",
+            "competition_id": "sr:competition:27384"
+          },
+          "stage": {
+            "order": 1,
+            "type": "league",
+            "phase": "regular season",
+            "start_date": "2026-01-09",
+            "end_date": "2026-04-20",
+            "year": "2026"
+          },
+          "round": {
+            "number": 2
+          },
+          "groups": [
+            {
+              "id": "sr:league:103340",
+              "name": "Liga de Expansion MX, Clausura 2026"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "sport_event",
+          "sport_event_properties": {
+            "lineups": false,
+            "formations": false,
+            "venue": false,
+            "extended_play_by_play": false,
+            "extended_player_stats": false,
+            "extended_team_stats": false,
+            "ballspotting": false,
+            "commentary": false,
+            "fun_facts": true,
+            "goal_scorers": true,
+            "goal_scorers_live": true,
+            "scores": "live",
+            "game_clock": true,
+            "deeper_play_by_play": false,
+            "deeper_player_stats": false,
+            "deeper_team_stats": false,
+            "basic_play_by_play": false,
+            "basic_player_stats": false,
+            "basic_team_stats": false
+          }
+        },
+        "competitors": [
+          {
+            "id": "sr:competitor:109859",
+            "name": "Alebrijes de Oaxaca FC",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "ADO",
+            "qualifier": "home",
+            "gender": "male"
+          },
+          {
+            "id": "sr:competitor:36529",
+            "name": "Atletico Morelia",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "ATM",
+            "qualifier": "away",
+            "gender": "male"
+          }
+        ],
+        "sport_event_conditions": {
+          "weather": {
+            "pitch_conditions": "good",
+            "overall_conditions": "good"
+          },
+          "ground": {
+            "neutral": false
+          }
+        }
+      },
+      "sport_event_status": {
+        "status": "live",
+        "match_status": "2nd_half",
+        "home_score": 0,
+        "away_score": 3,
+        "period_scores": [
+          {
+            "home_score": 0,
+            "away_score": 2,
+            "type": "regular_period",
+            "number": 1
+          },
+          {
+            "home_score": 0,
+            "away_score": 1,
+            "type": "regular_period",
+            "number": 2
+          }
+        ],
+        "clock": {
+          "played": "84:04"
+        }
+      }
+    },
+    {
+      "sport_event": {
+        "id": "sr:sport_event:66919372",
+        "start_time": "2026-01-17T01:00:00+00:00",
+        "start_time_confirmed": true,
+        "sport_event_context": {
+          "sport": {
+            "id": "sr:sport:1",
+            "name": "Soccer"
+          },
+          "category": {
+            "id": "sr:category:12",
+            "name": "Mexico",
+            "country_code": "MEX"
+          },
+          "competition": {
+            "id": "sr:competition:27384",
+            "name": "Liga de Expansion MX, Clausura",
+            "parent_id": "sr:competition:697",
+            "gender": "men"
+          },
+          "season": {
+            "id": "sr:season:138044",
+            "name": "Liga de Expansion MX, Clausura 2026",
+            "start_date": "2026-01-09",
+            "end_date": "2026-05-17",
+            "year": "2026",
+            "competition_id": "sr:competition:27384"
+          },
+          "stage": {
+            "order": 1,
+            "type": "league",
+            "phase": "regular season",
+            "start_date": "2026-01-09",
+            "end_date": "2026-04-20",
+            "year": "2026"
+          },
+          "round": {
+            "number": 2
+          },
+          "groups": [
+            {
+              "id": "sr:league:103340",
+              "name": "Liga de Expansion MX, Clausura 2026"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "sport_event",
+          "sport_event_properties": {
+            "lineups": false,
+            "formations": false,
+            "venue": false,
+            "extended_play_by_play": false,
+            "extended_player_stats": false,
+            "extended_team_stats": false,
+            "ballspotting": false,
+            "commentary": false,
+            "fun_facts": true,
+            "goal_scorers": true,
+            "goal_scorers_live": true,
+            "scores": "live",
+            "game_clock": true,
+            "deeper_play_by_play": false,
+            "deeper_player_stats": false,
+            "deeper_team_stats": false,
+            "basic_play_by_play": false,
+            "basic_player_stats": false,
+            "basic_team_stats": false
+          }
+        },
+        "competitors": [
+          {
+            "id": "sr:competitor:36526",
+            "name": "CF Correcaminos UAT",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "COR",
+            "qualifier": "home",
+            "gender": "male"
+          },
+          {
+            "id": "sr:competitor:911245",
+            "name": "Club Atletico La Paz",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "CLU",
+            "qualifier": "away",
+            "gender": "male"
+          }
+        ],
+        "sport_event_conditions": {
+          "weather": {
+            "pitch_conditions": "good",
+            "overall_conditions": "good"
+          },
+          "ground": {
+            "neutral": false
+          }
+        }
+      },
+      "sport_event_status": {
+        "status": "live",
+        "match_status": "2nd_half",
+        "home_score": 0,
+        "away_score": 3,
+        "period_scores": [
+          {
+            "home_score": 0,
+            "away_score": 2,
+            "type": "regular_period",
+            "number": 1
+          },
+          {
+            "home_score": 0,
+            "away_score": 1,
+            "type": "regular_period",
+            "number": 2
+          }
+        ],
+        "clock": {
+          "played": "90:00",
+          "stoppage_time_played": "01:58"
+        }
+      }
+    },
+    {
+      "sport_event": {
+        "id": "sr:sport_event:67695674",
+        "start_time": "2026-01-17T01:30:00+00:00",
+        "start_time_confirmed": true,
+        "sport_event_context": {
+          "sport": {
+            "id": "sr:sport:1",
+            "name": "Soccer"
+          },
+          "category": {
+            "id": "sr:category:274",
+            "name": "Colombia",
+            "country_code": "COL"
+          },
+          "competition": {
+            "id": "sr:competition:27070",
+            "name": "Liga DIMAYOR",
+            "parent_id": "sr:competition:241",
+            "gender": "men"
+          },
+          "season": {
+            "id": "sr:season:138096",
+            "name": "Liga DIMAYOR 2026",
+            "start_date": "2026-01-16",
+            "end_date": "2026-12-15",
+            "year": "2026",
+            "competition_id": "sr:competition:27070"
+          },
+          "stage": {
+            "order": 1,
+            "type": "league",
+            "phase": "regular season",
+            "start_date": "2026-01-16",
+            "end_date": "2026-05-02",
+            "year": "2026"
+          },
+          "round": {
+            "number": 1
+          },
+          "groups": [
+            {
+              "id": "sr:league:103996",
+              "name": "Liga DIMAYOR 2026, Apertura",
+              "group_name": "Apertura"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "sport_event",
+          "sport_event_properties": {
+            "lineups": true,
+            "formations": true,
+            "venue": true,
+            "extended_play_by_play": false,
+            "extended_player_stats": false,
+            "extended_team_stats": false,
+            "lineups_availability": "pre",
+            "ballspotting": true,
+            "commentary": true,
+            "fun_facts": true,
+            "goal_scorers": true,
+            "goal_scorers_live": true,
+            "scores": "live",
+            "game_clock": true,
+            "deeper_play_by_play": true,
+            "deeper_player_stats": true,
+            "deeper_team_stats": true,
+            "basic_play_by_play": true,
+            "basic_player_stats": true,
+            "basic_team_stats": true
+          }
+        },
+        "competitors": [
+          {
+            "id": "sr:competitor:89368",
+            "name": "Fortaleza FC",
+            "country": "Colombia",
+            "country_code": "COL",
+            "abbreviation": "FOR",
+            "qualifier": "home",
+            "gender": "male"
+          },
+          {
+            "id": "sr:competitor:1098993",
+            "name": "Alianza FC Valledupar",
+            "country": "Colombia",
+            "country_code": "COL",
+            "abbreviation": "ALI",
+            "qualifier": "away",
+            "gender": "male"
+          }
+        ],
+        "venue": {
+          "id": "sr:venue:2567",
+          "name": "Estadio Metropolitano de Techo",
+          "capacity": 10000,
+          "city_name": "Bogota",
+          "country_name": "Colombia",
+          "map_coordinates": "4.6234123, -74.1374618",
+          "country_code": "COL",
+          "timezone": "America/Bogota"
+        },
+        "sport_event_conditions": {
+          "referees": [
+            {
+              "id": "sr:referee:1407111",
+              "name": "Trujillo Castro, Edwin Ferney",
+              "nationality": "Colombia",
+              "country_code": "COL",
+              "type": "main_referee"
+            }
+          ],
+          "weather": {
+            "pitch_conditions": "good",
+            "overall_conditions": "medium"
+          },
+          "ground": {
+            "neutral": false
+          },
+          "lineups": {
+            "confirmed": true
+          }
+        }
+      },
+      "sport_event_status": {
+        "status": "live",
+        "match_status": "2nd_half",
+        "home_score": 0,
+        "away_score": 0,
+        "period_scores": [
+          {
+            "home_score": 0,
+            "away_score": 0,
+            "type": "regular_period",
+            "number": 1
+          },
+          {
+            "home_score": 0,
+            "away_score": 0,
+            "type": "regular_period",
+            "number": 2
+          }
+        ],
+        "ball_locations": [
+          {
+            "order": 4,
+            "x": 72,
+            "y": 91,
+            "qualifier": "home"
+          },
+          {
+            "order": 3,
+            "x": 60,
+            "y": 96,
+            "qualifier": "home"
+          },
+          {
+            "order": 2,
+            "x": 53,
+            "y": 50,
+            "qualifier": "home"
+          },
+          {
+            "order": 1,
+            "x": 64,
+            "y": 48,
+            "qualifier": "home"
+          }
+        ],
+        "match_situation": {
+          "status": "attack",
+          "qualifier": "home",
+          "updated_at": "2026-01-17T02:52:25+00:00"
+        },
+        "clock": {
+          "played": "61:33"
+        }
+      }
+    },
+    {
+      "sport_event": {
+        "id": "sr:sport_event:66855920",
+        "start_time": "2026-01-17T03:00:00+00:00",
+        "start_time_confirmed": true,
+        "sport_event_context": {
+          "sport": {
+            "id": "sr:sport:1",
+            "name": "Soccer"
+          },
+          "category": {
+            "id": "sr:category:12",
+            "name": "Mexico",
+            "country_code": "MEX"
+          },
+          "competition": {
+            "id": "sr:competition:27466",
+            "name": "Liga MX, Clausura",
+            "parent_id": "sr:competition:352",
+            "gender": "men"
+          },
+          "season": {
+            "id": "sr:season:137954",
+            "name": "Liga MX, Clausura 2026",
+            "start_date": "2026-01-09",
+            "end_date": "2026-05-24",
+            "year": "2026",
+            "competition_id": "sr:competition:27466"
+          },
+          "stage": {
+            "order": 1,
+            "type": "league",
+            "phase": "regular season",
+            "start_date": "2026-01-09",
+            "end_date": "2026-04-27",
+            "year": "2026"
+          },
+          "round": {
+            "number": 3
+          },
+          "groups": [
+            {
+              "id": "sr:league:103228",
+              "name": "Liga MX, Clausura 2026"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "sport_event",
+          "sport_event_properties": {
+            "lineups": true,
+            "formations": true,
+            "venue": true,
+            "extended_play_by_play": true,
+            "extended_player_stats": true,
+            "extended_team_stats": true,
+            "lineups_availability": "pre",
+            "ballspotting": true,
+            "commentary": true,
+            "fun_facts": true,
+            "goal_scorers": true,
+            "goal_scorers_live": true,
+            "scores": "live",
+            "game_clock": true,
+            "deeper_play_by_play": true,
+            "deeper_player_stats": true,
+            "deeper_team_stats": true,
+            "basic_play_by_play": true,
+            "basic_player_stats": true,
+            "basic_team_stats": true
+          }
+        },
+        "competitors": [
+          {
+            "id": "sr:competitor:1946",
+            "name": "Mazatlan FC",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "MAZ",
+            "qualifier": "home",
+            "gender": "male"
+          },
+          {
+            "id": "sr:competitor:1932",
+            "name": "CF Monterrey",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "MON",
+            "qualifier": "away",
+            "gender": "male"
+          }
+        ],
+        "venue": {
+          "id": "sr:venue:52469",
+          "name": "Estadio de Mazatlan",
+          "capacity": 25000,
+          "city_name": "Mazatlan",
+          "country_name": "Mexico",
+          "map_coordinates": "23.277058, -106.382488",
+          "country_code": "MEX",
+          "timezone": "America/Mexico_City"
+        },
+        "channels": [
+          {
+            "name": "TUDN",
+            "url": "https://www.tudn.com/futbol/liga-mx",
+            "country": "United States",
+            "country_code": "USA"
+          }
+        ],
+        "sport_event_conditions": {
+          "referees": [
+            {
+              "id": "sr:referee:2184622",
+              "name": "Lopez Penuelas, Ismael Rosario",
+              "nationality": "Mexico",
+              "country_code": "MEX",
+              "type": "main_referee"
+            }
+          ],
+          "weather": {
+            "pitch_conditions": "good",
+            "overall_conditions": "medium"
+          },
+          "ground": {
+            "neutral": false
+          },
+          "lineups": {
+            "confirmed": true
+          }
+        }
+      },
+      "sport_event_status": {
+        "status": "not_started",
+        "match_status": "not_started"
+      }
+    },
+    {
+      "sport_event": {
+        "id": "sr:sport_event:66919374",
+        "start_time": "2026-01-17T03:00:00+00:00",
+        "start_time_confirmed": true,
+        "sport_event_context": {
+          "sport": {
+            "id": "sr:sport:1",
+            "name": "Soccer"
+          },
+          "category": {
+            "id": "sr:category:12",
+            "name": "Mexico",
+            "country_code": "MEX"
+          },
+          "competition": {
+            "id": "sr:competition:27384",
+            "name": "Liga de Expansion MX, Clausura",
+            "parent_id": "sr:competition:697",
+            "gender": "men"
+          },
+          "season": {
+            "id": "sr:season:138044",
+            "name": "Liga de Expansion MX, Clausura 2026",
+            "start_date": "2026-01-09",
+            "end_date": "2026-05-17",
+            "year": "2026",
+            "competition_id": "sr:competition:27384"
+          },
+          "stage": {
+            "order": 1,
+            "type": "league",
+            "phase": "regular season",
+            "start_date": "2026-01-09",
+            "end_date": "2026-04-20",
+            "year": "2026"
+          },
+          "round": {
+            "number": 2
+          },
+          "groups": [
+            {
+              "id": "sr:league:103340",
+              "name": "Liga de Expansion MX, Clausura 2026"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "sport_event",
+          "sport_event_properties": {
+            "lineups": false,
+            "formations": false,
+            "venue": false,
+            "extended_play_by_play": false,
+            "extended_player_stats": false,
+            "extended_team_stats": false,
+            "ballspotting": false,
+            "commentary": false,
+            "fun_facts": true,
+            "goal_scorers": true,
+            "goal_scorers_live": true,
+            "scores": "live",
+            "game_clock": true,
+            "deeper_play_by_play": false,
+            "deeper_player_stats": false,
+            "deeper_team_stats": false,
+            "basic_play_by_play": false,
+            "basic_player_stats": false,
+            "basic_team_stats": false
+          }
+        },
+        "competitors": [
+          {
+            "id": "sr:competitor:5291",
+            "name": "CSD Dorados Sinaloa",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "DRD",
+            "qualifier": "home",
+            "gender": "male"
+          },
+          {
+            "id": "sr:competitor:159946",
+            "name": "CD Mineros de Zacatecas",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "MZA",
+            "qualifier": "away",
+            "gender": "male"
+          }
+        ],
+        "sport_event_conditions": {
+          "ground": {
+            "neutral": false
+          }
+        }
+      },
+      "sport_event_status": {
+        "status": "not_started",
+        "match_status": "not_started"
+      }
+    }
+  ]
+}

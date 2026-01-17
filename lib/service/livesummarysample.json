@@ -1,0 +1,1204 @@
+{
+  "generated_at": "2026-01-17T03:37:47+00:00",
+  "summaries": [
+    {
+      "sport_event": {
+        "id": "sr:sport_event:66855920",
+        "start_time": "2026-01-17T03:00:00+00:00",
+        "start_time_confirmed": true,
+        "sport_event_context": {
+          "sport": {
+            "id": "sr:sport:1",
+            "name": "Soccer"
+          },
+          "category": {
+            "id": "sr:category:12",
+            "name": "Mexico",
+            "country_code": "MEX"
+          },
+          "competition": {
+            "id": "sr:competition:27466",
+            "name": "Liga MX, Clausura",
+            "parent_id": "sr:competition:352",
+            "gender": "men"
+          },
+          "season": {
+            "id": "sr:season:137954",
+            "name": "Liga MX, Clausura 2026",
+            "start_date": "2026-01-09",
+            "end_date": "2026-05-24",
+            "year": "2026",
+            "competition_id": "sr:competition:27466"
+          },
+          "stage": {
+            "order": 1,
+            "type": "league",
+            "phase": "regular season",
+            "start_date": "2026-01-09",
+            "end_date": "2026-04-27",
+            "year": "2026"
+          },
+          "round": {
+            "number": 3
+          },
+          "groups": [
+            {
+              "id": "sr:league:103228",
+              "name": "Liga MX, Clausura 2026"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "sport_event",
+          "sport_event_properties": {
+            "lineups": true,
+            "formations": true,
+            "venue": true,
+            "extended_play_by_play": true,
+            "extended_player_stats": true,
+            "extended_team_stats": true,
+            "lineups_availability": "pre",
+            "ballspotting": true,
+            "commentary": true,
+            "fun_facts": true,
+            "goal_scorers": true,
+            "goal_scorers_live": true,
+            "scores": "live",
+            "game_clock": true,
+            "deeper_play_by_play": true,
+            "deeper_player_stats": true,
+            "deeper_team_stats": true,
+            "basic_play_by_play": true,
+            "basic_player_stats": true,
+            "basic_team_stats": true
+          }
+        },
+        "competitors": [
+          {
+            "id": "sr:competitor:1946",
+            "name": "Mazatlan FC",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "MAZ",
+            "qualifier": "home",
+            "gender": "male"
+          },
+          {
+            "id": "sr:competitor:1932",
+            "name": "CF Monterrey",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "MON",
+            "qualifier": "away",
+            "gender": "male"
+          }
+        ],
+        "venue": {
+          "id": "sr:venue:52469",
+          "name": "Estadio de Mazatlan",
+          "capacity": 25000,
+          "city_name": "Mazatlan",
+          "country_name": "Mexico",
+          "map_coordinates": "23.277058, -106.382488",
+          "country_code": "MEX",
+          "timezone": "America/Mexico_City"
+        },
+        "channels": [
+          {
+            "name": "TUDN",
+            "url": "https://www.tudn.com/futbol/liga-mx",
+            "country": "United States",
+            "country_code": "USA"
+          }
+        ],
+        "sport_event_conditions": {
+          "referees": [
+            {
+              "id": "sr:referee:2184622",
+              "name": "Lopez Penuelas, Ismael Rosario",
+              "nationality": "Mexico",
+              "country_code": "MEX",
+              "type": "main_referee"
+            }
+          ],
+          "weather": {
+            "pitch_conditions": "good",
+            "overall_conditions": "medium"
+          },
+          "ground": {
+            "neutral": false
+          },
+          "lineups": {
+            "confirmed": true
+          }
+        }
+      },
+      "sport_event_status": {
+        "status": "live",
+        "match_status": "1st_half",
+        "home_score": 0,
+        "away_score": 3,
+        "period_scores": [
+          {
+            "home_score": 0,
+            "away_score": 3,
+            "type": "regular_period",
+            "number": 1
+          }
+        ],
+        "ball_locations": [
+          {
+            "order": 4,
+            "x": 95,
+            "y": 50,
+            "qualifier": "away"
+          },
+          {
+            "order": 3,
+            "x": 92,
+            "y": 42,
+            "qualifier": "home"
+          },
+          {
+            "order": 2,
+            "x": 80,
+            "y": 87,
+            "qualifier": "home"
+          },
+          {
+            "order": 1,
+            "x": 71,
+            "y": 62,
+            "qualifier": "home"
+          }
+        ],
+        "match_situation": {
+          "status": "safe",
+          "qualifier": "away",
+          "updated_at": "2026-01-17T03:37:22+00:00"
+        },
+        "clock": {
+          "played": "31:27"
+        }
+      },
+      "statistics": {
+        "totals": {
+          "competitors": [
+            {
+              "id": "sr:competitor:1946",
+              "name": "Mazatlan FC",
+              "abbreviation": "MAZ",
+              "qualifier": "home",
+              "statistics": {
+                "ball_possession": 23,
+                "cards_given": 1,
+                "corner_kicks": 0,
+                "fouls": 2,
+                "free_kicks": 2,
+                "goal_kicks": 0,
+                "injuries": 0,
+                "offsides": 0,
+                "red_cards": 0,
+                "shots_blocked": 0,
+                "shots_off_target": 0,
+                "shots_on_target": 0,
+                "shots_saved": 5,
+                "shots_total": 0,
+                "substitutions": 0,
+                "throw_ins": 2,
+                "yellow_cards": 1,
+                "yellow_red_cards": 0
+              },
+              "players": [
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:341199",
+                  "name": "Barcenas, Edgar",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:792131",
+                  "name": "Lainez, Mauro",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:967167",
+                  "name": "Merolla, Lucas",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1110251",
+                  "name": "Diaz, Jair",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1134377",
+                  "name": "Sierra, Jordan",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1239918",
+                  "name": "Rubio, Brian",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1322092",
+                  "name": "Alcaraz, Andre",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1434067",
+                  "name": "Teodora da Silva, Luiz Eduardo",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1649484",
+                  "name": "Almada, Facundo",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1746697",
+                  "name": "Fabio",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2077937",
+                  "name": "Rodriguez, Ricardo",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2240849",
+                  "name": "Hernandez, Daniel",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2284363",
+                  "name": "Zaleta, Mauro",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2387689",
+                  "name": "Lopez, Gabriel",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2454933",
+                  "name": "Saavedra, Angel",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2537841",
+                  "name": "Moreno, Omar",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2764109",
+                  "name": "Godnez, Said",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2932427",
+                  "name": "Leyva, Angel",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 1,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:3020946",
+                  "name": "Gonzalez, Ivan",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:3050781",
+                  "name": "Aguas, Brian",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:3134208",
+                  "name": "Estrada Gonzalez, Jaime Andres",
+                  "starter": false
+                }
+              ]
+            },
+            {
+              "id": "sr:competitor:1932",
+              "name": "CF Monterrey",
+              "abbreviation": "MON",
+              "qualifier": "away",
+              "statistics": {
+                "ball_possession": 77,
+                "cards_given": 1,
+                "corner_kicks": 4,
+                "fouls": 2,
+                "free_kicks": 2,
+                "goal_kicks": 1,
+                "injuries": 0,
+                "offsides": 0,
+                "red_cards": 0,
+                "shots_blocked": 1,
+                "shots_off_target": 0,
+                "shots_on_target": 6,
+                "shots_saved": 0,
+                "shots_total": 7,
+                "substitutions": 0,
+                "throw_ins": 9,
+                "yellow_cards": 1,
+                "yellow_red_cards": 0
+              },
+              "players": [
+                {
+                  "statistics": {
+                    "assists": 1,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:41560",
+                  "name": "Canales, Sergio",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_by_head": 1,
+                    "goals_scored": 1,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 1,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:123906",
+                  "name": "Corona, Jesus",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:155702",
+                  "name": "Ocampos, Lucas",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 1,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 1,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:191176",
+                  "name": "Martial, Anthony",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:221148",
+                  "name": "Medina, Stefan",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:231776",
+                  "name": "Torres, Oliver",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:314096",
+                  "name": "Salcedo, Carlos",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:322691",
+                  "name": "Cardenas, Luis",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:359070",
+                  "name": "Aguirre, Erick",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 1,
+                    "goals_scored": 1,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 1,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 1,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:583332",
+                  "name": "Rodriguez, Jorge",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:918930",
+                  "name": "Berterame, German",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1010229",
+                  "name": "Reyes, Luis",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1016761",
+                  "name": "Mele, Santiago",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1060001",
+                  "name": "Arteaga, Gerardo",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1250090",
+                  "name": "Chavez, Ricardo",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1253958",
+                  "name": "De la Rosa, Roberto",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1833140",
+                  "name": "Guzman, Victor",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:1972113",
+                  "name": "Ambriz, Fidel",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2094528",
+                  "name": "Aceves, Daniel",
+                  "starter": true
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2645057",
+                  "name": "Fimbres, Iker",
+                  "starter": false
+                },
+                {
+                  "statistics": {
+                    "assists": 0,
+                    "corner_kicks": 0,
+                    "goals_scored": 0,
+                    "offsides": 0,
+                    "own_goals": 0,
+                    "red_cards": 0,
+                    "shots_blocked": 0,
+                    "shots_off_target": 0,
+                    "shots_on_target": 0,
+                    "substituted_in": 0,
+                    "substituted_out": 0,
+                    "yellow_cards": 0,
+                    "yellow_red_cards": 0
+                  },
+                  "id": "sr:player:2720076",
+                  "name": "Moxica, Joaquin",
+                  "starter": false
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sport_event": {
+        "id": "sr:sport_event:66919374",
+        "start_time": "2026-01-17T03:00:00+00:00",
+        "start_time_confirmed": true,
+        "sport_event_context": {
+          "sport": {
+            "id": "sr:sport:1",
+            "name": "Soccer"
+          },
+          "category": {
+            "id": "sr:category:12",
+            "name": "Mexico",
+            "country_code": "MEX"
+          },
+          "competition": {
+            "id": "sr:competition:27384",
+            "name": "Liga de Expansion MX, Clausura",
+            "parent_id": "sr:competition:697",
+            "gender": "men"
+          },
+          "season": {
+            "id": "sr:season:138044",
+            "name": "Liga de Expansion MX, Clausura 2026",
+            "start_date": "2026-01-09",
+            "end_date": "2026-05-17",
+            "year": "2026",
+            "competition_id": "sr:competition:27384"
+          },
+          "stage": {
+            "order": 1,
+            "type": "league",
+            "phase": "regular season",
+            "start_date": "2026-01-09",
+            "end_date": "2026-04-20",
+            "year": "2026"
+          },
+          "round": {
+            "number": 2
+          },
+          "groups": [
+            {
+              "id": "sr:league:103340",
+              "name": "Liga de Expansion MX, Clausura 2026"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "sport_event",
+          "sport_event_properties": {
+            "lineups": false,
+            "formations": false,
+            "venue": false,
+            "extended_play_by_play": false,
+            "extended_player_stats": false,
+            "extended_team_stats": false,
+            "ballspotting": false,
+            "commentary": false,
+            "fun_facts": true,
+            "goal_scorers": true,
+            "goal_scorers_live": true,
+            "scores": "live",
+            "game_clock": true,
+            "deeper_play_by_play": false,
+            "deeper_player_stats": false,
+            "deeper_team_stats": false,
+            "basic_play_by_play": false,
+            "basic_player_stats": false,
+            "basic_team_stats": false
+          }
+        },
+        "competitors": [
+          {
+            "id": "sr:competitor:5291",
+            "name": "CSD Dorados Sinaloa",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "DRD",
+            "qualifier": "home",
+            "gender": "male"
+          },
+          {
+            "id": "sr:competitor:159946",
+            "name": "CD Mineros de Zacatecas",
+            "country": "Mexico",
+            "country_code": "MEX",
+            "abbreviation": "MZA",
+            "qualifier": "away",
+            "gender": "male"
+          }
+        ],
+        "sport_event_conditions": {
+          "ground": {
+            "neutral": false
+          }
+        }
+      },
+      "sport_event_status": {
+        "status": "live",
+        "match_status": "1st_half",
+        "home_score": 0,
+        "away_score": 0,
+        "period_scores": [
+          {
+            "home_score": 0,
+            "away_score": 0,
+            "type": "regular_period",
+            "number": 1
+          }
+        ],
+        "clock": {
+          "played": "32:34"
+        }
+      }
+    }
+  ]
+}
