@@ -17,7 +17,8 @@ class _FavoritePageState extends State<FavoritePage> {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: GameTile(
-            icondata: Icons.person,
+            homeImage: 'https://r2.thesportsdb.com/images/media/team/badge/uyhbfe1612467038.png',
+            awayImage: 'https://r2.thesportsdb.com/images/media/team/badge/dfyfhl1604094109.png',
             isLive: true,
             isFavorite: true,
             awayScores: '2',

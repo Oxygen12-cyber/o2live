@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-import 'package:redis/redis.dart';
 
 final baseUrl = 'https://v3.football.api-sports.io/';
 
@@ -11,7 +10,7 @@ final url = Uri.parse('$baseUrl/fixtures/?date=2025-12-20');
 
 class ApiService {
   Future getApiData() async {
-    final command = await RedisConnection().connect('localhost', 6379);
+    final command = null;
 
     final cachedData = await command.get('sportsData');
     if (cachedData.toString() != 'null') {

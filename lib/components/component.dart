@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:o2live/extensions/extension.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -58,10 +59,10 @@ class GameTile extends StatelessWidget {
   final String? awayScores;
   final String homeTeam;
   final String awayTeam;
-  final IconData icondata;
+  final String homeImage;
+  final String awayImage;
   const GameTile({
     super.key,
-    required this.icondata,
     required this.isLive,
     this.onTap,
     this.gametime,
@@ -70,6 +71,8 @@ class GameTile extends StatelessWidget {
     this.awayScores,
     required this.homeTeam,
     required this.awayTeam,
+    required this.homeImage,
+    required this.awayImage,
   });
 
   @override
@@ -145,14 +148,26 @@ class GameTile extends StatelessWidget {
             Row(
               spacing: 10,
               children: [
-                Icon(icondata, size: 24),
+                CachedNetworkImage(
+                  imageUrl: homeImage,
+                  fit: BoxFit.cover,
+                  height: 24,
+                  width: 24,
+                  alignment: Alignment.center,
+                ),
                 Text(homeTeam, style: const TextStyle(color: Colors.black)),
               ],
             ),
             Row(
               spacing: 10,
               children: [
-                Icon(icondata, size: 24),
+                CachedNetworkImage(
+                  imageUrl: awayImage,
+                  fit: BoxFit.cover,
+                  height: 24,
+                  width: 24,
+                  alignment: Alignment.center,
+                ),
                 Text(awayTeam, style: const TextStyle(color: Colors.black)),
               ],
             ),

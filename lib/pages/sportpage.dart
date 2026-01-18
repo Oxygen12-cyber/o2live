@@ -334,8 +334,7 @@ class SliverListBox extends ConsumerWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => Sportinfopage(
-                        sportsdata:
-                            schedu,
+                        sportsdata: schedu,
                         leagueName:
                             schedu
                                 .sportEvent
@@ -353,7 +352,10 @@ class SliverListBox extends ConsumerWidget {
                     ),
                   );
                 },
-                icondata: Icons.person,
+                homeImage:
+                    'https://r2.thesportsdb.com/images/media/team/badge/uyhbfe1612467038.png',
+                awayImage:
+                    'https://r2.thesportsdb.com/images/media/team/badge/dfyfhl1604094109.png',
                 gametime: parseGameTime['gameTime'],
                 isLive: parseGameTime['isLive'],
                 isFavorite: mockMatches[index % mockMatches.length].isFavorite,
